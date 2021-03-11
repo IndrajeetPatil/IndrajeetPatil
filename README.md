@@ -97,5 +97,6 @@ and their meows to R console 🐈🐈🐈
 
 [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
 
-
+<!--
 ![Metrics](https://metrics.lecoq.io/IndrajeetPatil?template=classic&config.timezone=Europe%2FBerlin)
+-->
