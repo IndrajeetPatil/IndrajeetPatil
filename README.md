@@ -48,6 +48,9 @@ statistical analysis in a tidy way 🔁💪♻
 - [**pairwiseComparisons**](https://github.com/IndrajeetPatil/pairwiseComparisons):
 Pairwise comparison tests for one-way designs 🔬📝
 
+- [**tidyBF**](https://github.com/IndrajeetPatil/tidyBF): Tidy wrapper around
+`BayesFactor` R package 🍬🌟🎪
+
 ### Fun
 
 - [**kittyR**](https://github.com/IndrajeetPatil/kittyR): Bring those kitties
