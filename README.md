@@ -5,29 +5,20 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am currently a Postdoctoral Fellow at the Center for Humans and Machines, Max
-Planck Institute for Human Development, Berlin. I trained (M.Sc. degree) in
-Physics, then obtained a Ph.D. in Cognitive Neuroscience, and now carry out
-research in social psychology. 
-
-My primary academic interests lie in moral judgment and decision-making. In
-addition to studying moral cognition in healthy individuals using
-neuroscientific methods (fMRI, psychophysiology, etc.). I also study clinical
-populations and sub-clinical personality traits to investigate current models of
-moral cognition. Recently, I have also started working in applied ethics where
-we attempt to inform policy-makers about folk moral intuitions regarding the
-said policies.
+I am currently a Postdoctoral Fellow at the [Center for Humans and Machines](https://www.mpib-berlin.mpg.de/chm). I trained in Physics (M.Sc.),
+obtained a Ph.D. in Cognitive Neuroscience, and now work as a social psychology
+researche. My primary academic interests lie in moral judgment and
+decision-making. Recently, I am working on applied ethics where we attempt to
+inform policy-makers about folk moral intuitions regarding the said policies.
 
 You can find further information on my website:
 
 👉👉 <https://sites.google.com/site/indrajeetspatilmorality/> 👈👈
 
-In addition to my research interests, I am also passionate about **open source software development**. I especially love working on developing tools that make
+In addition to my academic research, I am also passionate about **open source software development**. I especially love working on developing tools that make
 data visualization and statistical analysis more fun. 🙌
 
 ## As a solo developer
-
-### Statistics
 
 ### Data Visualization
 
@@ -58,6 +49,14 @@ and their meows to R console 🐈🐈🐈
 
 ## As a team developer or a collaborator
 
+### Data Visualization
+
+- [**see**](https://easystats.github.io/see): 🎨 Visualisation toolbox for
+  beautiful and publication-ready figures
+
+- [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Visualisation toolbox for
+  beautiful and publication-ready figures  
+  
 ### Statistics
 
 - [**report**](https://easystats.github.io/report): 📜 🎉 Automated reporting of
@@ -83,14 +82,6 @@ and their meows to R console 🐈🐈🐈
 
 - [**insight**](https://easystats.github.io/insight): 🔮 Easy access to model
   information for various model objects
-
-### Data Visualization
-
-- [**see**](https://easystats.github.io/see): 🎨 Visualisation toolbox for
-  beautiful and publication-ready figures
-
-- [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Visualisation toolbox for
-  beautiful and publication-ready figures  
 
 <br>
 
