@@ -92,6 +92,7 @@ and their meows to R console 🐈🐈🐈
 - [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Visualisation toolbox for
   beautiful and publication-ready figures  
 
-[![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
+<br>
 
-![Metrics](https://github.com/IndrajeetPatil/IndrajeetPatil/raw/main/github-metrics.svg)
+
+[![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
