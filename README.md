@@ -8,7 +8,7 @@
 I am a Postdoctoral Fellow at the [Center for Humans and Machines](https://www.mpib-berlin.mpg.de/chm). After studying Physics (M.Sc.),
 I obtained a Ph.D. in Cognitive Neuroscience, and now work as a social
 psychology researcher. My research interests lie primarily in moral
-decision-making. Fore more, see:
+decision-making. For more, see:
 <https://sites.google.com/site/indrajeetspatilmorality/>
 
 In addition to my academic research, I am also passionate about **open source software development**. I especially love working on developing tools that make
@@ -27,12 +27,8 @@ data visualization and statistical analysis more fun. 🙌
 Dataframes and expressions with statistical details
 - [**broomExtra**](https://github.com/IndrajeetPatil/broomExtra): Helpers for
 regression analyses using `broom` & `easystats` packages  📈 🔍
-- [**groupedstats**](https://github.com/IndrajeetPatil/groupedstats): Grouped
-statistical analysis in a tidy way 🔁💪♻
 - [**pairwiseComparisons**](https://github.com/IndrajeetPatil/pairwiseComparisons):
 Pairwise comparison tests for one-way designs 🔬📝
-- [**tidyBF**](https://github.com/IndrajeetPatil/tidyBF): Tidy wrapper around
-`BayesFactor` R package 🍬🌟🎪
 
 ### Fun
 
