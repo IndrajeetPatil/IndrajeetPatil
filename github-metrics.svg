@@ -1282,7 +1282,7 @@
                             Use spaces for indents
                         </li>
                         <li>
-                            Mostly push code around 10:00
+                            Mostly push code around 16:00
                         </li>
                         <li>
                             Mostly active on friday
@@ -1351,9 +1351,9 @@
                     </div>
                     <div class="entry">
                         <span class="value">
-                            9
+                            8
                         </span>
-                        <div class="bar" style="height: 50px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                        <div class="bar" style="height: 44.44444444444444px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
                         10
                     </div>
                     <div class="entry">
@@ -1393,9 +1393,9 @@
                     </div>
                     <div class="entry">
                         <span class="value">
-                            8
+                            9
                         </span>
-                        <div class="bar" style="height: 44.44444444444444px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                        <div class="bar" style="height: 50px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
                         16
                     </div>
                     <div class="entry">
@@ -1452,15 +1452,17 @@
                     </h3>
                     <div class="chart-bars">
                         <div class="entry">
-                            <span class="value"></span>
-                            <div class="bar" style="height: 0px; background-color: var(--color-calendar-graph-day-L0-bg)"></div>
+                            <span class="value">
+                                1
+                            </span>
+                            <div class="bar" style="height: 2.083333333333333px; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                             Sun
                         </div>
                         <div class="entry">
                             <span class="value">
-                                11
+                                10
                             </span>
-                            <div class="bar" style="height: 22.916666666666664px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <div class="bar" style="height: 20.833333333333336px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             Mon
                         </div>
                         <div class="entry">
@@ -1509,25 +1511,25 @@
                             <span class="name">
                                 R
                             </span>
-                            <div class="bar" style="width: 48.663999999999994%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                            <div class="bar" style="width: 49.72%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
                             <span class="value">
-                                61%
+                                62%
                             </span>
                         </div>
                         <div class="entry">
                             <span class="name">
                                 HTML
                             </span>
-                            <div class="bar" style="width: 24.432000000000002%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <div class="bar" style="width: 23.616%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             <span class="value">
-                                31%
+                                30%
                             </span>
                         </div>
                         <div class="entry">
                             <span class="name">
                                 TeX
                             </span>
-                            <div class="bar" style="width: 6.456%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                            <div class="bar" style="width: 6.24%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                             <span class="value">
                                 8%
                             </span>
@@ -1536,7 +1538,7 @@
                             <span class="name">
                                 JavaScript
                             </span>
-                            <div class="bar" style="width: 0.44000000000000006%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                            <div class="bar" style="width: 0.43200000000000005%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                             <span class="value">
                                 1%
                             </span>
@@ -1549,7 +1551,7 @@
                     These metrics do not include all private contributions, timezone Europe/Berlin
                 </span>
                 <span>
-                    Last updated Sun, 18 Apr 2021 13:27:25 GMT with lowlighter/metrics@3.7.0
+                    Last updated Sun, 18 Apr 2021 14:21:46 GMT with lowlighter/metrics@3.7.0
                 </span>
             </footer>
             <div id="metrics-end"></div>
