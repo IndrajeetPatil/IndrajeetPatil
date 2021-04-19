@@ -1155,7 +1155,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"/>
                         </svg>
-                        Following 1926 users
+                        Following 1927 users
                     </div>
                     <div class="field">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -1407,9 +1407,9 @@
                     </div>
                     <div class="entry">
                         <span class="value">
-                            4
+                            3
                         </span>
-                        <div class="bar" style="height: 22.22222222222222px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                        <div class="bar" style="height: 16.666666666666664px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                         18
                     </div>
                     <div class="entry">
@@ -1460,9 +1460,9 @@
                         </div>
                         <div class="entry">
                             <span class="value">
-                                9
+                                8
                             </span>
-                            <div class="bar" style="height: 18.75px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <div class="bar" style="height: 16.666666666666664px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             Mon
                         </div>
                         <div class="entry">
@@ -1511,7 +1511,7 @@
                             <span class="name">
                                 R
                             </span>
-                            <div class="bar" style="width: 45.672000000000004%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                            <div class="bar" style="width: 45.68000000000001%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
                             <span class="value">
                                 57%
                             </span>
@@ -1520,7 +1520,7 @@
                             <span class="name">
                                 HTML
                             </span>
-                            <div class="bar" style="width: 28.232%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <div class="bar" style="width: 28.224%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             <span class="value">
                                 35%
                             </span>
@@ -1551,7 +1551,7 @@
                     These metrics do not include all private contributions, timezone Europe/Berlin
                 </span>
                 <span>
-                    Last updated Mon, 19 Apr 2021 15:25:15 GMT with lowlighter/metrics@3.7.0
+                    Last updated Mon, 19 Apr 2021 16:41:07 GMT with lowlighter/metrics@3.7.0
                 </span>
             </footer>
             <div id="metrics-end"></div>
