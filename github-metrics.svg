@@ -1372,16 +1372,16 @@
                     </div>
                     <div class="entry">
                         <span class="value">
-                            4
+                            1
                         </span>
-                        <div class="bar" style="height: 22.22222222222222px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                        <div class="bar" style="height: 5.555555555555555px; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                         13
                     </div>
                     <div class="entry">
                         <span class="value">
-                            3
+                            1
                         </span>
-                        <div class="bar" style="height: 16.666666666666664px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                        <div class="bar" style="height: 5.555555555555555px; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                         14
                     </div>
                     <div class="entry">
@@ -1467,9 +1467,9 @@
                         </div>
                         <div class="entry">
                             <span class="value">
-                                16
+                                11
                             </span>
-                            <div class="bar" style="height: 33.33333333333333px; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                            <div class="bar" style="height: 22.916666666666664px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             Tue
                         </div>
                         <div class="entry">
@@ -1551,7 +1551,7 @@
                     These metrics do not include all private contributions, timezone Europe/Berlin
                 </span>
                 <span>
-                    Last updated Tue, 20 Apr 2021 11:20:04 GMT with lowlighter/metrics@3.7.0
+                    Last updated Tue, 20 Apr 2021 12:34:15 GMT with lowlighter/metrics@3.7.0
                 </span>
             </footer>
             <div id="metrics-end"></div>
