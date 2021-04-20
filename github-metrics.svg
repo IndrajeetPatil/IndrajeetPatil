@@ -1282,7 +1282,7 @@
                             Use spaces for indents
                         </li>
                         <li>
-                            Mostly push code around 16:00
+                            Mostly push code around 08:00
                         </li>
                         <li>
                             Mostly active on friday
@@ -1337,9 +1337,9 @@
                     </div>
                     <div class="entry">
                         <span class="value">
-                            8
+                            9
                         </span>
-                        <div class="bar" style="height: 44.44444444444444px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                        <div class="bar" style="height: 50px; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
                         08
                     </div>
                     <div class="entry">
@@ -1467,9 +1467,9 @@
                         </div>
                         <div class="entry">
                             <span class="value">
-                                17
+                                18
                             </span>
-                            <div class="bar" style="height: 35.41666666666667px; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                            <div class="bar" style="height: 37.5px; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
                             Tue
                         </div>
                         <div class="entry">
@@ -1511,7 +1511,7 @@
                             <span class="name">
                                 R
                             </span>
-                            <div class="bar" style="width: 45.728%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                            <div class="bar" style="width: 45.751999999999995%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
                             <span class="value">
                                 57%
                             </span>
@@ -1520,7 +1520,7 @@
                             <span class="name">
                                 HTML
                             </span>
-                            <div class="bar" style="width: 28.183999999999997%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <div class="bar" style="width: 28.168000000000003%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             <span class="value">
                                 35%
                             </span>
@@ -1529,7 +1529,7 @@
                             <span class="name">
                                 TeX
                             </span>
-                            <div class="bar" style="width: 5.696%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                            <div class="bar" style="width: 5.688%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                             <span class="value">
                                 7%
                             </span>
@@ -1551,7 +1551,7 @@
                     These metrics do not include all private contributions, timezone Europe/Berlin
                 </span>
                 <span>
-                    Last updated Tue, 20 Apr 2021 05:22:31 GMT with lowlighter/metrics@3.7.0
+                    Last updated Tue, 20 Apr 2021 06:30:12 GMT with lowlighter/metrics@3.7.0
                 </span>
             </footer>
             <div id="metrics-end"></div>
