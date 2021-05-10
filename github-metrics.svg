@@ -1454,13 +1454,13 @@
                     <div class="chart-bars horizontal">
                         <div class="entry">
                             <span class="name">R</span>
-                            <div class="bar" style="width: 64.064%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                            <div class="bar" style="width: 64.024%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
                             <span class="value">80%</span>
                         </div>
                         <div class="entry">
                             <span class="name">HTML</span>
-                            <div class="bar" style="width: 14.775999999999998%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
-                            <span class="value">18%</span>
+                            <div class="bar" style="width: 14.808000000000002%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                            <span class="value">19%</span>
                         </div>
                         <div class="entry">
                             <span class="name">TeX</span>
@@ -1472,7 +1472,7 @@
             </div>
             <footer>
                 <span>These metrics do not include all private contributions, timezone Europe/Berlin</span>
-                <span>Last updated Mon, 10 May 2021 01:04:09 GMT with lowlighter/metrics@3.8.0</span>
+                <span>Last updated Mon, 10 May 2021 02:48:29 GMT with lowlighter/metrics@3.8.0</span>
             </footer>
             <div id="metrics-end"></div>
         </div>
