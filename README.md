@@ -11,7 +11,7 @@ psychology researcher. My research interests lie primarily in moral
 decision-making. For more, see:
 <https://sites.google.com/site/indrajeetspatilmorality/>
 
-In addition to my academic research, I am also passionate about **open source software development**. I especially love working on developing tools that make
+In addition to my academic research, I am also passionate about **open source software development**. I especially love developing tools that make
 data visualization and statistical analysis more fun. 🙌
 
 ## As a solo developer
