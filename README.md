@@ -5,16 +5,16 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am a Postdoctoral Fellow at the [Center for Humans and Machines](https://www.mpib-berlin.mpg.de/chm). After studying Physics (M.Sc.),
-I obtained a Ph.D. in Cognitive Neuroscience, and now work as a social
-psychology researcher. My research interests lie primarily in moral
-decision-making. For more, see:
+I am a Postdoctoral Fellow at the [Center for Humans and Machines](https://www.mpib-berlin.mpg.de/chm). After studying Physics (M.Sc.), I
+obtained a Ph.D. in Cognitive Neuroscience. My current research interests lie
+primarily in moral decision-making. For more, see:
 <https://sites.google.com/site/indrajeetspatilmorality/>
 
-In addition to my academic research, I am also passionate about **open source software development**. I especially love developing tools that make
-data visualization and statistical analysis more fun. 🙌
+Additionally, I am also passionate about **open source software development**,
+and love developing tools that make data visualization and statistical analysis
+more fun. 🙌
 
-## As a solo developer
+## As a Lead Developer
 
 ### Data Visualization
 
@@ -35,7 +35,7 @@ Pairwise comparison tests for one-way designs 🔬📝
 - [**kittyR**](https://github.com/IndrajeetPatil/kittyR): Bring those kitties
 and their meows to R console 🐈🐈🐈
 
-## As a team developer or a collaborator
+## As a Team Developer
 
 ### Data Visualization
 
