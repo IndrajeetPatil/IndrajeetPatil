@@ -62,6 +62,7 @@ and their meows to R console 🐈🐈🐈
   and performance metrics (R2, ICC, LOO, AIC, BF, ...)
 - [**insight**](https://easystats.github.io/insight): 🔮 Easy access to model
   information for various model objects
+- [**datawizard**](https://easystats.github.io/datawizard): 🧙 Magic potions to clean and transform your data
 
 <br>
 
