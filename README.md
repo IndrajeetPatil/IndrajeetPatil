@@ -25,8 +25,6 @@ more fun. 🙌
 
 - [**statsExpressions**](https://github.com/IndrajeetPatil/statsExpressions):
 Dataframes and expressions with statistical details
-- [**broomExtra**](https://github.com/IndrajeetPatil/broomExtra): Helpers for
-regression analyses using `broom` & `easystats` packages  📈 🔍
 - [**pairwiseComparisons**](https://github.com/IndrajeetPatil/pairwiseComparisons):
 Pairwise comparison tests for one-way designs 🔬📝
 
