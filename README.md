@@ -15,11 +15,10 @@ more fun. 🙌
 
 ## As a Lead Developer
 
-Here are a few of the packages I have developed:
+Here are a few of the packages I have developed (and am proud of 😅):
 
 - [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing
   `ggplot2` plots with statistical analysis 📊🎨📣
-
 - [**statsExpressions**](https://github.com/IndrajeetPatil/statsExpressions):
 Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
 
