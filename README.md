@@ -5,45 +5,28 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am a Postdoctoral Fellow at the [Center for Humans and Machines](https://www.mpib-berlin.mpg.de/chm). After studying Physics (M.Sc.), I
-obtained a Ph.D. in Cognitive Neuroscience. My current research interests lie
-primarily in moral decision-making. For more, see:
-<https://sites.google.com/site/indrajeetspatilmorality/>
+I am a Software Engineer at [esqLABS](https://esqlabs.com/).
 
-Additionally, I am also passionate about **open source software development**,
-and love developing tools that make data visualization and statistical analysis
+My prior research work focused on the neural and psychological basis of moral judgment and decision-making (for more, see my [website](https://sites.google.com/site/indrajeetspatilmorality/)). Currently, I work on open-source softwares for drug R&D.
+
+I am deeply passionate about **open-source software development**.
+Both in personal capacity and as a core [`easystats`](https://easystats.github.io/easystats/) team member, I love developing tools that make data visualization and statistical analysis
 more fun. 🙌
 
 ## As a Lead Developer
 
-### Data Visualization
+Here are a few of the packages I have developed:
 
 - [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing
   `ggplot2` plots with statistical analysis 📊🎨📣
 
-### Statistics
-
 - [**statsExpressions**](https://github.com/IndrajeetPatil/statsExpressions):
-Dataframes and expressions with statistical details
-- [**pairwiseComparisons**](https://github.com/IndrajeetPatil/pairwiseComparisons):
-Pairwise comparison tests for one-way designs 🔬📝
-
-### Fun
-
-- [**kittyR**](https://github.com/IndrajeetPatil/kittyR): Bring those kitties
-and their meows to R console 🐈🐈🐈
+Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
 
 ## As a Team Developer
 
-### Data Visualization
-
 - [**see**](https://easystats.github.io/see): 🎨 Visualisation toolbox for
   beautiful and publication-ready figures
-- [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Visualisation toolbox for
-  beautiful and publication-ready figures  
-  
-### Statistics
-
 - [**report**](https://easystats.github.io/report): 📜 🎉 Automated reporting of
   objects in R
 - [**bayestestR**](https://easystats.github.io/bayestestR): 👻 Utilities for
@@ -61,7 +44,8 @@ and their meows to R console 🐈🐈🐈
 - [**insight**](https://easystats.github.io/insight): 🔮 Easy access to model
   information for various model objects
 - [**datawizard**](https://easystats.github.io/datawizard): 🧙 Magic potions to clean and transform your data
-
+- [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Visualisation toolbox for
+  beautiful and publication-ready figures
 <br>
 
 [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
