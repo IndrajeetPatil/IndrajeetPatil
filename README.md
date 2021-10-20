@@ -7,7 +7,7 @@
 
 I am a Software Engineer at [esqLABS](https://esqlabs.com/) and work on open-source software for systems pharmacology.
 
-My prior academic research work focused on the neural and psychological basis of moral judgment and decision-making (for more, see my [website](https://sites.google.com/site/indrajeetspatilmorality/publications)).
+My prior academic research work focused on the neural and psychological basis of moral decision-making (for publications, see [website](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 I am deeply passionate about **open-source software development**.
 Both in personal capacity and as a core [`easystats`](https://easystats.github.io/easystats/) team member, I love developing tools that make data visualization and statistical analysis
@@ -18,7 +18,7 @@ more fun. 🙌
 Here are a few of the packages I have developed (and am proud of 😅):
 
 - [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing
-  `ggplot2` plots with statistical analysis 📊🎨📣
+  `{ggplot2}` plots with statistical analysis 📊🎨📣
 - [**statsExpressions**](https://github.com/IndrajeetPatil/statsExpressions):
 Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
 
