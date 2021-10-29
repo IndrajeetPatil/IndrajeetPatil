@@ -5,13 +5,12 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am a Software Engineer at [esqLABS](https://esqlabs.com/) and work on open-source software for systems pharmacology.
+I am a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for [systems pharmacology](https://github.com/Open-Systems-Pharmacology).
 
-My prior academic research work focused on the neural and psychological basis of moral decision-making (for publications, see [website](https://sites.google.com/site/indrajeetspatilmorality/publications)).
-
-I am deeply passionate about **open-source software development**.
-Both in personal capacity and as a core [`easystats`](https://easystats.github.io/easystats/) team member, I love developing tools that make data visualization and statistical analysis
+Additionally, both in personal capacity and as a core [`easystats`](https://easystats.github.io/easystats/) member, I love developing tools that make data visualization and statistical analysis
 more fun. 🙌
+
+My prior research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 ## As a Lead Developer
 
