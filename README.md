@@ -23,6 +23,7 @@ Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
 
 ## As a Team Developer
 
+- [**easystats**](https://easystats.github.io/easystats/): 🌌 The R easystats-project
 - [**see**](https://easystats.github.io/see): 🎨 Visualization toolbox for
   beautiful and publication-ready figures
 - [**report**](https://easystats.github.io/report): 📜 🎉 Automated reporting of
@@ -33,8 +34,6 @@ Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
   Correlation Analysis
 - [**modelbased**](https://easystats.github.io/modelbased): 📈 Estimate effects,
   contrasts and means based on statistical models
-- [**effectsize**](https://easystats.github.io/effectsize): 🐉 Compute and work
-  with indices of effect size and standardized parameters
 - [**parameters**](https://easystats.github.io/parameters): 📊 Computation and
   processing of models' parameters
 - [**performance**](https://easystats.github.io/performance): 💪 Models' quality
@@ -43,6 +42,7 @@ Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
   information for various model objects
 - [**datawizard**](https://easystats.github.io/datawizard): 🧙 Magic potions to clean and transform your data
 - [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Significance brackets for ggplot2
+- [**ospsuite**](https://www.open-systems-pharmacology.org/OSPSuite-R/): 💊 R package to manipulate OSPSuite Models
 <br>
 
 [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
