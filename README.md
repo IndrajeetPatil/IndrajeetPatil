@@ -7,22 +7,20 @@
 
 I am a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for [systems pharmacology](https://github.com/Open-Systems-Pharmacology).
 
-Additionally, both in personal capacity and as a core [`easystats`](https://easystats.github.io/easystats/) member, I love developing tools that make data visualization and statistical analysis
-more fun. 🙌
+I am a former academic with a passion for software engineering. I now spend my days obsessing over how to write readable, scalable, and performant code for a research software design with minimum complexity. 🥼🔬👨‍💻
+
+Thus far, I have (co-)authored over a dozen libraries in the R programming language, and in the near future, I wish to expand my open-source contributions to C-family programming languages. 🤞
 
 My prior research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
-## As a Lead Developer
+## R Packages
 
-Here are a few of the packages I have developed (and am proud of 😅):
+Here are some of the packages I have authored, either as a primary/sole author or as a co-author:
 
 - [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing
   `{ggplot2}` plots with statistical analysis 📊🎨📣
 - [**statsExpressions**](https://github.com/IndrajeetPatil/statsExpressions):
 Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
-
-## As a Team Developer
-
 - [**easystats**](https://easystats.github.io/easystats/): 🌌 The R easystats-project
 - [**see**](https://easystats.github.io/see): 🎨 Visualization toolbox for
   beautiful and publication-ready figures
