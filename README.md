@@ -5,9 +5,9 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for [systems pharmacology](https://github.com/Open-Systems-Pharmacology).
+I am currently a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for systems pharmacology.
 
-I am a former academic with a passion for software engineering. I now spend my days obsessing over how to write readable, scalable, and performant code for a research software design with minimum complexity. 🥼🔬👨‍💻
+A former academic with a passion for software engineering, I now spend my days obsessing over how to write readable, scalable, and performant code for a research software, which is designed to have minimum complexity. 🥼🔬👨‍💻
 
 Thus far, I have (co-)authored over a dozen libraries in the R programming language, and in the near future, I wish to expand my open-source contributions to C-family programming languages. 🤞
 
@@ -40,7 +40,6 @@ Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
   information for various model objects
 - [**datawizard**](https://easystats.github.io/datawizard): 🧙 Magic potions to clean and transform your data
 - [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Significance brackets for ggplot2
-- [**ospsuite**](https://www.open-systems-pharmacology.org/OSPSuite-R/): 💊 R package to manipulate OSPSuite Models
 <br>
 
 [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
