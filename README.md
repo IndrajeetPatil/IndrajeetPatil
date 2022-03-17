@@ -7,7 +7,7 @@
 
 I am currently a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for systems pharmacology.
 
-A former academic with a passion for software engineering, I now spend my days obsessing over how to write readable, scalable, and performant code for a research software, which is designed to have minimum complexity. 🥼🔬👨‍💻
+I am a former academic, and I now spend my days obsessing over how to design a software to have minimum complexity and how to write readable, scalable, and performant code. 🥼🔬👨‍💻
 
 Thus far, I have (co-)authored over a dozen libraries in the R programming language, and in the near future, I wish to expand my open-source contributions to C-family programming languages. 🤞
 
