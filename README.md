@@ -39,7 +39,7 @@ Tidy Dataframes and Expressions with Statistical Details 📉📜🔣✅
   information for various model objects
 - [**datawizard**](https://easystats.github.io/datawizard): 🧙 Magic potions to clean and transform your data
 - [**ggsignif**](https://const-ae.github.io/ggsignif/): 🎨 Significance brackets for ggplot2
-- [**lintr**](https://lintr.r-lib.org/): 🎨 Static code analysis for R
+- [**lintr**](https://lintr.r-lib.org/): 🐞 Static code analysis for R
 <br>
 
 [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
