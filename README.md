@@ -4,13 +4,17 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am currently a Software Engineer at [esqLABS](https://esqlabs.com/) and work on free and open-source software for systems pharmacology.
+I am currently a Software Engineer at [cynkra](https://www.cynkra.com/).
 
-I am a former academic, and I now spend my days obsessing over how to design a software to have minimum complexity and how to write readable, scalable, and performant code. 🥼🔬👨‍💻
+My passion is to design a software to have minimum complexity while writing readable, scalable, and performant code. 🥼🔬👨‍💻
 
-Thus far, I have (co-)authored over a dozen libraries in the R programming language, and in the near future, I wish to expand my open-source contributions to C-family programming languages. 🤞
+I have (co-)authored over a dozen libraries in R that deal with:
 
-My prior research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
+- statistical analysis and reporting
+- data visualization
+- interactive web applications
+
+My prior academic research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 ## R Packages
 
