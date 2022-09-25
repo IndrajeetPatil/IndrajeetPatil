@@ -11,6 +11,7 @@ I have (co-)authored over a dozen libraries in R that deal with:
 - statistical analysis and reporting
 - data visualization
 - interactive web applications
+- code analysis
 
 My prior academic research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
@@ -27,7 +28,7 @@ Tidy Dataframes and Expressions with Statistical Details
 - [**lintr**](https://lintr.r-lib.org/): Static code analysis for R
 <br>
 
-[![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IndrajeetPatil&layout=compact&theme=onedark)
+<!-- [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IndrajeetPatil&layout=compact&theme=onedark) -->
 
 ![Metrics](https://metrics.lecoq.io/IndrajeetPatil?template=classic&config.timezone=Europe%2FBerlin)
