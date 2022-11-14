@@ -4,7 +4,10 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am currently a Software Engineer at [cynkra](https://www.cynkra.com/). I am passionate about designing software to have minimum complexity while writing readable, scalable, and performant code. 🥼🔬👨‍💻
+I am passionate about software design and development, especially about minimizing software complexity and
+writing readable, maintainable, and performant code. Formerly, I carried out research in social psychology and
+neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and
+communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)). 🥼🔬👨‍💻
 
 I have (co-)authored over a dozen libraries in R that deal with:
 
@@ -12,8 +15,6 @@ I have (co-)authored over a dozen libraries in R that deal with:
 - data visualization
 - interactive web applications
 - code analysis
-
-My prior academic research work focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 ## R Packages
 
