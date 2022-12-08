@@ -11,18 +11,12 @@ communication. My research focused on the neural and psychological basis of mora
 
 ## Software development
 
-I have authored over a dozen libraries in R that deal with:
+I have authored over a dozen R packages that deal with:
 
-- statistical analysis and reporting
-- data visualization
-- code analysis
+- statistical analysis and reporting (e.g. [**easystats**](https://easystats.github.io/easystats/) a collection of 10 packages)
+- data visualization (e.g. [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing `{ggplot2}` plots with statistical analysis)
+- code analysis (e.g. [**lintr**](https://lintr.r-lib.org/): Static code analysis for R)
 <!-- - interactive web applications -->
-
-For example:
-
-- [**easystats**](https://easystats.github.io/easystats/): The R easystats-project (collection of 10 packages)
-- [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing `{ggplot2}` plots with statistical analysis
-- [**lintr**](https://lintr.r-lib.org/): Static code analysis for R
 
 <br>
 
