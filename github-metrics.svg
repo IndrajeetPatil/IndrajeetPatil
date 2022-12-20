@@ -69,7 +69,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            6533 Commits
+                            6534 Commits
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -353,8 +353,8 @@
                             14
                         </div>
                         <div class="entry">
-                            <span class="value">7</span>
-                            <div class="bar" style="height: 17.5px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                            <span class="value">6</span>
+                            <div class="bar" style="height: 15px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             15
                         </div>
                         <div class="entry">
@@ -363,8 +363,8 @@
                             16
                         </div>
                         <div class="entry">
-                            <span class="value">5</span>
-                            <div class="bar" style="height: 12.5px; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                            <span class="value">6</span>
+                            <div class="bar" style="height: 15px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                             17
                         </div>
                         <div class="entry">
@@ -414,8 +414,8 @@
                                 Mon
                             </div>
                             <div class="entry">
-                                <span class="value">17</span>
-                                <div class="bar" style="height: 16.346153846153847px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                                <span class="value">18</span>
+                                <div class="bar" style="height: 17.307692307692307px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                                 Tue
                             </div>
                             <div class="entry">
@@ -429,8 +429,8 @@
                                 Thu
                             </div>
                             <div class="entry">
-                                <span class="value">17</span>
-                                <div class="bar" style="height: 16.346153846153847px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                                <span class="value">16</span>
+                                <div class="bar" style="height: 15.384615384615385px; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                                 Fri
                             </div>
                             <div class="entry">
@@ -444,7 +444,7 @@
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 20 Dec 2022, 17:27:35 (timezone Europe/Berlin) with lowlighter/metrics@3.30.0</span>
+                <span>Last updated 20 Dec 2022, 18:17:00 (timezone Europe/Berlin) with lowlighter/metrics@3.30.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
