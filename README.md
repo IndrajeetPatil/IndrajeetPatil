@@ -7,7 +7,7 @@
 I am passionate about software design and development, especially about minimizing software complexity and
 writing readable, maintainable, and performant code. Formerly, I carried out research in social psychology and
 neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and
-communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications){target="_blank"}). 🥼🔬👨‍💻
+communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)). 🥼🔬👨‍💻
 
 ## Software development
 
@@ -15,9 +15,9 @@ I have authored over a dozen R packages that have a combined download count of o
 
 They deal with:
 
-- statistical analysis and reporting (e.g. [**easystats**](https://easystats.github.io/easystats/){target="_blank"} project, a collection of 10 packages)
-- data visualization (e.g. [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot){target="_blank"}: Enhancing `{ggplot2}` plots with statistical analysis)
-- code analysis (e.g. [**lintr**](https://lintr.r-lib.org/){target="_blank"}: Static code analysis for R)
+- statistical analysis and reporting (e.g. [**easystats**](https://easystats.github.io/easystats/) project, a collection of 10 packages)
+- data visualization (e.g. [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing `{ggplot2}` plots with statistical analysis)
+- code analysis (e.g. [**lintr**](https://lintr.r-lib.org/): Static code analysis for R)
 <!-- - interactive web applications -->
 
 Other packages include: 
@@ -31,7 +31,7 @@ Other packages include:
 
 ## Presentations
 
-I love talking about all things software development, and [here](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"} is a list of my presentations on various topics.
+I love talking about all things software development, and [here](https://sites.google.com/site/indrajeetspatilmorality/presentations) is a list of my presentations on various topics.
 
 <!-- [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IndrajeetPatil&layout=compact&theme=onedark) -->
