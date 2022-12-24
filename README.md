@@ -22,12 +22,8 @@ They deal with:
 
 Other packages include: 
 
-<br>
-
 **datawizard**, **performance**, **parameters**, **insight**, **effectsize**, **bayestestR**, **modelbased**,
 **ggsignif**, **see**, **statsExpressions**, **report**, **correlation**, **styler**, **ospsuite**, **esqlabsR**
-
-<br>
 
 ## Presentations
 
@@ -36,4 +32,4 @@ I love talking about all things software development, and [here](https://sites.g
 <!-- [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IndrajeetPatil&layout=compact&theme=onedark) -->
 
-![Metrics](https://metrics.lecoq.io/IndrajeetPatil?template=classic&config.timezone=Europe%2FBerlin)
+<!-- ![Metrics](https://metrics.lecoq.io/IndrajeetPatil?template=classic&config.timezone=Europe%2FBerlin) -->
