@@ -5,13 +5,11 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
 I am passionate about software design and development, especially about minimizing software complexity and
-writing readable, maintainable, and performant code. Formerly, I carried out research in social psychology and
-neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and
-communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)). 🥼🔬👨‍💻
+writing readable, maintainable, and performant code to ensure that business product development is reliable and sustainable. Formerly, I carried out research in social psychology and neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 ## Software development
 
-I have authored over a dozen R packages that have a combined download count of over 20 million. 
+I have authored over a dozen R packages that have a combined download count of over 20 million.
 
 They deal with:
 
@@ -20,10 +18,10 @@ They deal with:
 - code analysis (e.g. [**lintr**](https://lintr.r-lib.org/): Static code analysis for R)
 <!-- - interactive web applications -->
 
-Other packages include: 
+Other authored packages include:
 
 **datawizard**, **performance**, **parameters**, **insight**, **effectsize**, **bayestestR**, **modelbased**,
-**ggsignif**, **see**, **statsExpressions**, **report**, **correlation**, **styler**, **ospsuite**, **esqlabsR**
+**ggsignif**, **see**, **statsExpressions**, **report**, **correlation**, **styler**, **ospsuite**, **ospsuite.utils**, **esqlabsR**
 
 ## Presentations
 
