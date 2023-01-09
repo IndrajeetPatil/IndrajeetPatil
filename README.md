@@ -5,7 +5,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
 I am passionate about software design and development, especially about minimizing software complexity and
-writing readable, maintainable, and performant code to ensure that business product development is reliable and sustainable. Formerly, I carried out research in social psychology and neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and communication. My research focused on the neural and psychological basis of moral decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
+writing readable, maintainable, and performant code to ensure that business product development is reliable and sustainable. Formerly, I carried out research in social psychology and neuroscience for 10 years, and have extensive experience in data analysis, visualization, reporting, and communication. My research focused on the neural and psychological basis of ethical decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
 
 ## Software development
 
@@ -25,7 +25,7 @@ Other authored packages include:
 
 ## Presentations
 
-I love talking about all things software development, and [here](https://sites.google.com/site/indrajeetspatilmorality/presentations) is a list of my presentations on various topics.
+If you are interested in good programming and software development practices, check out my [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
 
 <!-- [![My github stats](https://github-readme-stats.vercel.app/api?username=IndrajeetPatil&count_private=true&show_icons=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IndrajeetPatil&layout=compact&theme=onedark) -->
