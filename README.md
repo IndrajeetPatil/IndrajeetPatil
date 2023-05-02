@@ -4,14 +4,11 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2) -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am deeply committed to the art and science of software design and development. My focus is on reducing
-software complexity and creating code that is both readable, maintainable, and high-performing. This allows
-me to contribute to the development of reliable and sustainable business products. Prior to my current
-pursuits, I dedicated a decade to research in the fields of social psychology and neuroscience. During that time, I acquired substantial experience in data analysis, visualization, reporting, and communication. My research was centered on exploring the neural and psychological underpinnings of ethical decision-making (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)).
+I am a software developer with a passion for data science. With several years of experience in building data-driven products, I have acquired a deep understanding of how to create robust and scalable software solutions that solve real-world problems. Additionally, my academic research background (see [publications](https://sites.google.com/site/indrajeetspatilmorality/publications)) has made me adept at manipulating and analyzing large datasets with ease, and at creating data visualizations to communicate complex findings to a variety of audiences. Whether working on a data analysis project or developing a new software tool, I am always focused on delivering high-quality, user-friendly solutions. My research was centered on exploring the neural and psychological underpinnings of ethical decision-making.
 
 ---
 
-<p style="color: blue; text-align: center;">I am currently looking for a job. If you are hiring <b>a (Research) Software Engineer</b> or <b>a Data Scientist</b>, let me know!</p>
+<p style="color: blue; text-align: center;">I am currently looking for a job. If you are hiring <b>a (Research) Software Engineer</b> or <b>a Data Scientist/Analyst</b>, let me know!</p>
 
 ---
 
