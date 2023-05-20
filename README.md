@@ -16,9 +16,7 @@ science tools to draw insights from complex experimental datasets. My skills inc
 
 ## Software development
 
-I have authored over a dozen R packages that have a combined download count of over 20 million.
-
-They deal with:
+I have authored over a dozen R packages that deal with:
 
 - statistical analysis and reporting (e.g. [*easystats*](https://easystats.github.io/easystats/) project, a collection of 10 packages)
 - data visualization (e.g. [*ggstatsplot*](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing `{ggplot2}` plots with statistical analysis)
