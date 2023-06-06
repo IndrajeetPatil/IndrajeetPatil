@@ -6,12 +6,6 @@
 
 I am a software developer with a passion for data science and full-stack web development.  With several years of experience in building data-driven products, I have acquired a deep understanding of how to create robust and scalable software solutions that solve business problems. I have a proven track record of delivering high-quality, user-friendly software solutions to real-world problems; my open-source software packages have been downloaded over 25 million times.  Additionally, I have 10+ years of experience in using data science tools to draw insights from complex experimental datasets.  My skills include statistical modelling, experimental design, data analysis, visualization, and communication. I have 20+ peer-reviewed publications with 5000+ citations and 2 online books.
 
----
-
-<p style="color: blue; text-align: center;">I am currently looking for a job. If you are hiring <b>a (Research) Software Engineer</b> or <b>a Data Scientist/Analyst</b>, let me know!</p>
-
----
-
 ## Software development
 
 I have authored over a dozen R packages that deal with:
