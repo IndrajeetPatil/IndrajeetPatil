@@ -11,6 +11,4 @@ After 10+ years of programming and development, I can confidently create
 
 To know more about my skills and work, have a look at my [résumé](https://drive.google.com/file/d/1dn3Sd31qoMkgF5fV-uH_be7StapzowzJ/view?usp=sharing).
 
-## Presentations
-
 If you are interested in good programming and software development practices, check out my [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
