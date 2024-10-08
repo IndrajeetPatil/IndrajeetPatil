@@ -4,23 +4,12 @@
 [![Research gate](https://img.shields.io/badge/-Research%20Gate-green.svg?style=flat-square&logo=researchgate&logoColor=white&colorB=616161&labelColor=00BFA5)](https://www.researchgate.net/profile/Indrajeet-Patil-2) -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-I am a software developer passionate about data science and full-stack web development. With 5+ years of experience building data-driven products, I have acquired a deep understanding of creating robust and scalable software solutions that solve business problems. I have a proven track record of delivering high-quality, user-friendly software solutions to real-world problems (open-source software packages downloaded over 40 million times). Additionally, I have 10+ years of experience using data science tools to draw insights from complex empirical data. My skills include statistical modelling, experimental design, data analysis, visualization, and communication. I have 20+ peer-reviewed publications with over 10K citations and 2 online books.
+I am a holistic software developer with experience in several domains (energy, pharma, research)
+and types of software (full-stack web, data science).
+After 10+ years of programming and development, I can confidently create
+**robust, scalable, and user-friendly software solutions that solve business problems**.
 
-## Software development
-
-I have authored over a dozen R packages that deal with:
-
-- statistical analysis and reporting (e.g. [*easystats*](https://easystats.github.io/easystats/) project, a collection of 10 packages)
-- data visualization (e.g. [*ggstatsplot*](https://github.com/IndrajeetPatil/ggstatsplot): Enhancing `{ggplot2}` plots with statistical analysis)
-- code analysis ([*lintr*](https://lintr.r-lib.org/): Static code analysis for R)
-- code formatting ([*styler*](https://styler.r-lib.org/): Non-invasive pretty-printing of R code)
-
-<!-- - interactive web applications -->
-
-Other authored packages include:
-
-*datawizard*, *performance*, *parameters*, *insight*, *effectsize*, *bayestestR*, *modelbased*,
-*ggsignif*, *see*, *statsExpressions*, *report*, *correlation*, *styler*, *ospsuite*, *ospsuite.utils*, *esqlabsR*
+To know more about my skills and work, have a look at my [résumé](https://drive.google.com/file/d/1dn3Sd31qoMkgF5fV-uH_be7StapzowzJ/view?usp=sharing).
 
 ## Presentations
 
