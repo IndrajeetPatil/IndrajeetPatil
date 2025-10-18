@@ -6,6 +6,6 @@
 
 I am a seasoned senior software engineer with extensive experience across multiple domains (energy, pharma, research) and comprehensive expertise in diverse software architectures (full-stack web, data science, enterprise systems). With 10+ years of progressive agile development leadership, I architect and deliver software solutions that drive business value and technical excellence. My unique interdisciplinary background spanning physics, psychology, neuroscience, and open-source development provides distinctive insights and rapid adaptability for solving complex technical and business challenges.
 
-To know more about my skills and work, have a look at my [résumé](https://drive.google.com/file/d/1dn3Sd31qoMkgF5fV-uH_be7StapzowzJ/view?usp=sharing).
+To know more about my skills and work, have a look at my [résumé](https://drive.google.com/file/d/1ifQ29_smtPKMQFLICjl8FJRXzn_EG8Qt/view?usp=sharing).
 
 If you are interested in good programming and software development practices, check out my [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
