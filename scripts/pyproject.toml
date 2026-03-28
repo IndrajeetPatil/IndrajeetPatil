@@ -1,9 +1,0 @@
-[project]
-name = "website-scripts"
-version = "0.1.0"
-requires-python = ">=3.12"
-dependencies = ["polars>=1.0", "httpx>=0.28"]
-
-[dependency-groups]
-dev = []
-screenshots = ["playwright>=1.50"]
