@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-bg/95 backdrop-blur-md transition-shadow duration-300"
   id="site-header"
 >
   <nav
@@ -56,36 +56,76 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center gap-2">
       <Search />
 
-    <!-- Mobile menu button -->
-    <button
-      class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent md:hidden"
-      id="mobile-menu-btn"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      aria-label="Toggle navigation menu"
-    >
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
+      <!-- Dark mode toggle -->
+      <button
+        id="theme-toggle"
+        class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent transition-colors"
+        aria-label="Toggle dark mode"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-          id="hamburger-icon"></path>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-          id="close-icon"
-          class="hidden"></path>
-      </svg>
-    </button>
+        <!-- Sun icon (shown in dark mode) -->
+        <svg
+          class="h-5 w-5 hidden"
+          id="sun-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg
+          class="h-5 w-5"
+          id="moon-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Mobile menu button -->
+      <button
+        class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent md:hidden"
+        id="mobile-menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+            id="hamburger-icon"></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+            id="close-icon"
+            class="hidden"></path>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -128,15 +168,34 @@ const currentPath = Astro.url.pathname;
     closeIcon?.classList.toggle("hidden");
   });
 
-  // Scroll-aware header background
+  // Scroll-aware header shadow
   const header = document.getElementById("site-header");
   const updateHeader = () => {
     if (window.scrollY > 50) {
-      header?.classList.add("bg-bg/95", "backdrop-blur-md", "shadow-sm");
+      header?.classList.add("shadow-sm");
     } else {
-      header?.classList.remove("bg-bg/95", "backdrop-blur-md", "shadow-sm");
+      header?.classList.remove("shadow-sm");
     }
   };
   window.addEventListener("scroll", updateHeader, { passive: true });
   updateHeader();
+
+  // Dark mode toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+
+  function updateIcons() {
+    const isDark = document.documentElement.classList.contains("dark");
+    sunIcon?.classList.toggle("hidden", !isDark);
+    moonIcon?.classList.toggle("hidden", isDark);
+  }
+
+  themeToggle?.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateIcons();
+  });
+
+  updateIcons();
 </script>

@@ -153,6 +153,7 @@
   role: creator
   language: Python
   category: utilities
+  hex_sticker: /images/hex/crosszip.png
   pypi_url: "https://pypi.org/project/crosszip/"
   github_url: "https://github.com/IndrajeetPatil/crosszip"
   docs_url: "https://indrajeetpatil.github.io/crosszip/"

@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PageHeader from "@components/shared/PageHeader.astro";
 import TagFilter from "@components/shared/TagFilter.astro";
+import TableOfContents from "@components/shared/TableOfContents.astro";
 import { getCollection } from "astro:content";
 import citationData from "../../data/citation_counts.json";
 
@@ -10,9 +11,7 @@ const allPubs = await getCollection("publications");
 // Citation lookup by fuzzy title match
 const citationPubs = citationData.publications as Record<string, { citations: number; year: string }>;
 function getCitations(title: string): number | null {
-  // Try exact match first
   if (citationPubs[title]) return citationPubs[title].citations;
-  // Try case-insensitive partial match
   const lower = title.toLowerCase();
   for (const [key, val] of Object.entries(citationPubs)) {
     if (key.toLowerCase().includes(lower.slice(0, 40)) || lower.includes(key.toLowerCase().slice(0, 40))) {
@@ -29,6 +28,12 @@ const theses = allPubs.filter((p) => p.data.type === "thesis");
 // Group by year (descending)
 const years = [...new Set(articles.map((p) => p.data.year))].sort((a, b) => b - a);
 const pubsByYear = new Map(years.map((y) => [y, articles.filter((p) => p.data.year === y)]));
+
+// Build ToC entries from years + theses
+const tocEntries = [
+  ...years.map((y) => ({ id: `year-${y}`, label: String(y) })),
+  ...(theses.length > 0 ? [{ id: "theses", label: "Theses" }] : []),
+];
 
 // Compute tag counts
 const allTags = articles.flatMap((p) => p.data.tags);
@@ -70,180 +75,197 @@ function renderAuthors(authors: string): string {
     subtitle="Peer-reviewed research in neuroscience, moral psychology, and open-source statistical software."
   />
 
-  <div class="mx-auto max-w-4xl px-6 pb-20">
+  <div class="mx-auto max-w-6xl px-6 pb-20">
     <!-- Tag filter -->
-    <div class="reveal mb-12">
+    <div class="reveal mb-8">
       <TagFilter tags={tags} filterId="publications" />
     </div>
 
-    <!-- Publications by year -->
-    {
-      years.map((year) => (
-        <section class="mb-12">
-          <h2 class="reveal mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
-            {year}
-          </h2>
-          <div class="space-y-4">
-            {pubsByYear.get(year)?.map((pub) => (
-              <article
-                class="reveal rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md"
-                data-filterable="publications"
-                data-tags={pub.data.tags.join(",")}
-              >
-                <h3 class="text-lg font-bold leading-snug text-accent">
-                  {pub.data.title}
-                </h3>
-                <p
-                  class="mt-1 text-sm text-text-muted"
-                  set:html={renderAuthors(pub.data.authors)}
-                />
-                <p class="mt-1 text-sm italic text-text-muted">
-                  {pub.data.journal}
-                  {pub.data.type === "preprint" && (
-                    <span class="ml-2 inline-block rounded bg-amber-100 px-2 py-0.5 text-xs font-medium not-italic text-amber-800">
-                      Preprint
-                    </span>
-                  )}
-                </p>
+    <!-- Mobile ToC -->
+    <div class="reveal mb-8 lg:hidden">
+      <TableOfContents entries={tocEntries} variant="inline" />
+    </div>
 
-                {/* Citation count */}
-                {(() => {
-                  const cites = getCitations(pub.data.title);
-                  return cites !== null && cites > 0 ? (
-                    <p class="mt-2 flex items-center gap-1 text-sm text-text-muted">
-                      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <span class="font-semibold text-accent">{cites.toLocaleString()}</span> citations
+    <div class="lg:flex lg:gap-10">
+      <!-- Desktop ToC sidebar -->
+      <aside class="hidden lg:block lg:w-44 lg:shrink-0">
+        <div class="sticky top-28">
+          <TableOfContents entries={tocEntries} variant="sidebar" />
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="min-w-0 flex-1">
+        <!-- Publications by year -->
+        {
+          years.map((year) => (
+            <section class="mb-12" id={`year-${year}`} data-toc-section={`year-${year}`}>
+              <h2 class="reveal mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+                {year}
+              </h2>
+              <div class="space-y-4">
+                {pubsByYear.get(year)?.map((pub) => (
+                  <article
+                    class="reveal rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md"
+                    data-filterable="publications"
+                    data-tags={pub.data.tags.join(",")}
+                  >
+                    <h3 class="text-lg font-bold leading-snug text-accent">
+                      {pub.data.title}
+                    </h3>
+                    <p
+                      class="mt-1 text-sm text-text-muted"
+                      set:html={renderAuthors(pub.data.authors)}
+                    />
+                    <p class="mt-1 text-sm italic text-text-muted">
+                      {pub.data.journal}
+                      {pub.data.type === "preprint" && (
+                        <span class="ml-2 inline-block rounded bg-education/10 px-2 py-0.5 text-xs font-medium not-italic text-education">
+                          Preprint
+                        </span>
+                      )}
                     </p>
-                  ) : null;
-                })()}
 
-                <!-- Tags -->
-                <div class="mt-3 flex flex-wrap gap-2">
-                  {pub.data.tags.map((tag: string) => (
-                    <span class="rounded-full bg-tag-bg px-2.5 py-0.5 text-xs font-medium text-tag-text">
-                      {tagLabels[tag] || tag}
-                    </span>
-                  ))}
-                </div>
+                    {/* Citation count */}
+                    {(() => {
+                      const cites = getCitations(pub.data.title);
+                      return cites !== null && cites > 0 ? (
+                        <p class="mt-2 flex items-center gap-1 text-sm text-text-muted">
+                          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span class="font-semibold text-accent">{cites.toLocaleString()}</span> citations
+                        </p>
+                      ) : null;
+                    })()}
 
-                <!-- Links -->
-                <div class="mt-3 flex flex-wrap gap-3 text-sm">
-                  {pub.data.pdf && (
-                    <a
-                      href={`/pdfs/${pub.data.type === "thesis" ? "theses" : "publications"}/${pub.data.pdf}`}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                    >
-                      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      PDF
-                    </a>
-                  )}
-                  {pub.data.doi && (
-                    <a
-                      href={`https://doi.org/${pub.data.doi}`}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      DOI
-                    </a>
-                  )}
-                  {pub.data.supplementary_pdf && (
-                    <a
-                      href={`/pdfs/publications/${pub.data.supplementary_pdf}`}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                    >
-                      Supplementary
-                    </a>
-                  )}
-                  {pub.data.supplementary_url && (
-                    <a
-                      href={pub.data.supplementary_url}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Supplementary
-                    </a>
-                  )}
-                  {pub.data.data_url && (
-                    <a
-                      href={pub.data.data_url}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Data &amp; Materials
-                    </a>
-                  )}
-                  {pub.data.neuroimaging_url && (
-                    <a
-                      href={pub.data.neuroimaging_url}
-                      class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Neuroimaging
-                    </a>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))
-    }
-
-    <!-- Theses -->
-    {
-      theses.length > 0 && (
-        <section class="mt-16">
-          <h2 class="reveal mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
-            Theses
-          </h2>
-          <div class="space-y-4">
-            {theses
-              .sort((a, b) => b.data.year - a.data.year)
-              .map((thesis) => (
-                <article class="reveal rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md">
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <span class="inline-block rounded-full bg-education/10 px-2.5 py-0.5 text-xs font-medium text-education">
-                        {thesis.data.thesis_type}
-                      </span>
-                      <h3 class="mt-2 text-lg font-bold leading-snug text-accent">
-                        {thesis.data.title}
-                      </h3>
-                      <p class="mt-1 text-sm text-text-muted">
-                        {thesis.data.journal}, {thesis.data.year}
-                      </p>
+                    <!-- Tags -->
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      {pub.data.tags.map((tag: string) => (
+                        <span class="rounded-full bg-tag-bg px-2.5 py-0.5 text-xs font-medium text-tag-text">
+                          {tagLabels[tag] || tag}
+                        </span>
+                      ))}
                     </div>
-                    {thesis.data.pdf && (
-                      <a
-                        href={`/pdfs/theses/${thesis.data.pdf}`}
-                        class="flex-shrink-0 rounded-lg border border-border p-2 text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
-                        target="_blank"
-                        aria-label={`Download ${thesis.data.thesis_type}`}
-                      >
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
-                </article>
-              ))}
-          </div>
-        </section>
-      )
-    }
+
+                    <!-- Links -->
+                    <div class="mt-3 flex flex-wrap gap-3 text-sm">
+                      {pub.data.pdf && (
+                        <a
+                          href={`/pdfs/${pub.data.type === "thesis" ? "theses" : "publications"}/${pub.data.pdf}`}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                        >
+                          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          PDF
+                        </a>
+                      )}
+                      {pub.data.doi && (
+                        <a
+                          href={`https://doi.org/${pub.data.doi}`}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          DOI
+                        </a>
+                      )}
+                      {pub.data.supplementary_pdf && (
+                        <a
+                          href={`/pdfs/publications/${pub.data.supplementary_pdf}`}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                        >
+                          Supplementary
+                        </a>
+                      )}
+                      {pub.data.supplementary_url && (
+                        <a
+                          href={pub.data.supplementary_url}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Supplementary
+                        </a>
+                      )}
+                      {pub.data.data_url && (
+                        <a
+                          href={pub.data.data_url}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Data &amp; Materials
+                        </a>
+                      )}
+                      {pub.data.neuroimaging_url && (
+                        <a
+                          href={pub.data.neuroimaging_url}
+                          class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Neuroimaging
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+
+        <!-- Theses -->
+        {
+          theses.length > 0 && (
+            <section class="mt-16" id="theses" data-toc-section="theses">
+              <h2 class="reveal mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+                Theses
+              </h2>
+              <div class="space-y-4">
+                {theses
+                  .sort((a, b) => b.data.year - a.data.year)
+                  .map((thesis) => (
+                    <article class="reveal rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md">
+                      <div class="flex items-start justify-between gap-4">
+                        <div>
+                          <span class="inline-block rounded-full bg-education/10 px-2.5 py-0.5 text-xs font-medium text-education">
+                            {thesis.data.thesis_type}
+                          </span>
+                          <h3 class="mt-2 text-lg font-bold leading-snug text-accent">
+                            {thesis.data.title}
+                          </h3>
+                          <p class="mt-1 text-sm text-text-muted">
+                            {thesis.data.journal}, {thesis.data.year}
+                          </p>
+                        </div>
+                        {thesis.data.pdf && (
+                          <a
+                            href={`/pdfs/theses/${thesis.data.pdf}`}
+                            class="flex-shrink-0 rounded-lg border border-border p-2 text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
+                            target="_blank"
+                            aria-label={`Download ${thesis.data.thesis_type}`}
+                          >
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    </article>
+                  ))}
+              </div>
+            </section>
+          )
+        }
+      </div>
+    </div>
   </div>
 </BaseLayout>

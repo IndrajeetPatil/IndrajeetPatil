@@ -26,6 +26,25 @@
   --font-serif: "Playfair Display Variable", Georgia, "Times New Roman", serif;
 }
 
+/* Dark mode overrides */
+.dark {
+  --color-bg: #0f1729;
+  --color-bg-alt: #162032;
+  --color-surface: #1c2a3f;
+  --color-text: #e8edf4;
+  --color-text-muted: #8b9bb8;
+  --color-accent: #2dd4bf;
+  --color-accent-light: #5eead4;
+  --color-cta: #818cf8;
+  --color-cta-hover: #a5b4fc;
+  --color-border: #2a3a52;
+  --color-tag-bg: #0d3d38;
+  --color-tag-text: #5eead4;
+  --color-work: #2dd4bf;
+  --color-research: #818cf8;
+  --color-education: #fbbf24;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -100,4 +119,14 @@ body {
   outline: 2px solid var(--color-cta);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+/* Table of contents active state */
+.toc-link {
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.toc-link.active {
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
 }
