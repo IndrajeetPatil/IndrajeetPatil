@@ -14,7 +14,7 @@
 
 - id: foss-for-enterprise
   title: "FOSS for Enterprise"
-  description: "How organizations can strategically adopt and contribute to free and open-source software."
+  description: "How organisations can strategically adopt and contribute to free and open-source software."
   url: "https://indrajeetpatil.github.io/foss-for-enterprise/"
   category: language-agnostic-se
   image: /images/presentations/foss-for-enterprise.png
@@ -42,7 +42,7 @@
   image: /images/presentations/preventive-r-package-care.png
 
 - id: intro-to-ggstatsplot
-  title: "Introduction to {ggstatsplot}: Informative Statistical Visualizations"
+  title: "Introduction to {ggstatsplot}: Informative Statistical Visualisations"
   description: "How to create publication-ready plots with embedded statistical details using ggstatsplot."
   url: "https://indrajeetpatil.github.io/intro-to-ggstatsplot/"
   category: r-programming
