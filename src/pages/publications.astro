@@ -1,20 +1,26 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import PageHeader from "@components/shared/PageHeader.astro";
-import TagFilter from "@components/shared/TagFilter.astro";
-import TableOfContents from "@components/shared/TableOfContents.astro";
 import { getCollection } from "astro:content";
+import PageHeader from "@components/shared/PageHeader.astro";
+import TableOfContents from "@components/shared/TableOfContents.astro";
+import TagFilter from "@components/shared/TagFilter.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import citationData from "../../data/citation_counts.json";
 
 const allPubs = await getCollection("publications");
 
 // Citation lookup by fuzzy title match
-const citationPubs = citationData.publications as Record<string, { citations: number; year: string }>;
+const citationPubs = citationData.publications as Record<
+  string,
+  { citations: number; year: string }
+>;
 function getCitations(title: string): number | null {
   if (citationPubs[title]) return citationPubs[title].citations;
   const lower = title.toLowerCase();
   for (const [key, val] of Object.entries(citationPubs)) {
-    if (key.toLowerCase().includes(lower.slice(0, 40)) || lower.includes(key.toLowerCase().slice(0, 40))) {
+    if (
+      key.toLowerCase().includes(lower.slice(0, 40)) ||
+      lower.includes(key.toLowerCase().slice(0, 40))
+    ) {
       return val.citations;
     }
   }
@@ -62,7 +68,7 @@ const tags = [...tagCounts.entries()]
 function renderAuthors(authors: string): string {
   return authors
     .replace(/\*\*(.+?)\*\*/g, '<strong class="text-text">$1</strong>')
-    .replace(/\*/g, '<sup>*</sup>');
+    .replace(/\*/g, "<sup>*</sup>");
 }
 ---
 

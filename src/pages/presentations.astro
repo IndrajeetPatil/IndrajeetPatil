@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 import PageHeader from "@components/shared/PageHeader.astro";
 import TableOfContents from "@components/shared/TableOfContents.astro";
-import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 const allPresentations = await getCollection("presentations");
 
@@ -17,7 +17,7 @@ const grouped = new Map<string, typeof allPresentations>();
 for (const p of allPresentations) {
   const cat = p.data.category;
   if (!grouped.has(cat)) grouped.set(cat, []);
-  grouped.get(cat)!.push(p);
+  grouped.get(cat)?.push(p);
 }
 
 const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"];
