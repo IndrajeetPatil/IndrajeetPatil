@@ -1,0 +1,26 @@
+---
+const stats = [
+  { value: "75M+", label: "Open-Source Downloads" },
+  { value: "23", label: "Peer-Reviewed Publications" },
+  { value: "17,000+", label: "Citations" },
+];
+---
+
+<section class="bg-bg-alt py-16">
+  <div class="mx-auto max-w-4xl px-6">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+      {
+        stats.map((stat, i) => (
+          <div class={`reveal reveal-delay-${i + 1} text-center`}>
+            <p class="font-serif text-4xl font-bold text-accent sm:text-5xl" data-stat-value={stat.value}>
+              {stat.value}
+            </p>
+            <p class="mt-2 text-sm font-medium uppercase tracking-wider text-text-muted">
+              {stat.label}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

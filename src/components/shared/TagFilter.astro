@@ -1,0 +1,79 @@
+---
+interface Props {
+  tags: { label: string; value: string; count: number }[];
+  filterId: string;
+}
+
+const { tags, filterId } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2" role="toolbar" aria-label="Filter by tag" data-filter-id={filterId}>
+  <button
+    class="filter-btn active rounded-full border border-accent bg-accent px-4 py-1.5 text-sm font-medium text-white transition-all"
+    data-tag="all"
+    aria-pressed="true"
+  >
+    All
+  </button>
+  {
+    tags.map((tag) => (
+      <button
+        class="filter-btn rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-text-muted transition-all hover:border-accent/30 hover:text-accent"
+        data-tag={tag.value}
+        aria-pressed="false"
+      >
+        {tag.label}
+        <span class="ml-1 text-xs opacity-60">{tag.count}</span>
+      </button>
+    ))
+  }
+</div>
+
+<script define:vars={{ filterId }}>
+  document.addEventListener("astro:page-load", () => {
+    const toolbar = document.querySelector(`[data-filter-id="${filterId}"]`);
+    if (!toolbar) return;
+
+    const buttons = toolbar.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(`[data-filterable="${filterId}"]`);
+
+    function setFilter(tag) {
+      buttons.forEach((btn) => {
+        const isActive = btn.dataset.tag === tag;
+        btn.setAttribute("aria-pressed", String(isActive));
+        btn.classList.toggle("active", isActive);
+        btn.classList.toggle("border-accent", isActive);
+        btn.classList.toggle("bg-accent", isActive);
+        btn.classList.toggle("text-white", isActive);
+        btn.classList.toggle("border-border", !isActive);
+        btn.classList.toggle("bg-surface", !isActive);
+        btn.classList.toggle("text-text-muted", !isActive);
+      });
+
+      cards.forEach((card) => {
+        if (tag === "all") {
+          card.classList.remove("hidden");
+        } else {
+          const cardTags = (card.dataset.tags || "").split(",");
+          card.classList.toggle("hidden", !cardTags.includes(tag));
+        }
+      });
+
+      // Update URL hash
+      if (tag === "all") {
+        history.replaceState(null, "", window.location.pathname);
+      } else {
+        history.replaceState(null, "", `#tag=${tag}`);
+      }
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => setFilter(btn.dataset.tag));
+    });
+
+    // Restore from URL hash
+    const hash = window.location.hash;
+    const match = hash.match(/tag=(.+)/);
+    if (match) setFilter(decodeURIComponent(match[1]));
+  });
+</script>

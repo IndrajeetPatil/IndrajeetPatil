@@ -1,0 +1,54 @@
+- id: second-hardest-cs-thing
+  title: "Dealing with the Second Hardest Thing in Computer Science"
+  description: "Practical strategies for naming things well in code — variables, functions, classes, and beyond."
+  url: "https://indrajeetpatil.github.io/second-hardest-cs-thing/"
+  category: language-agnostic-se
+
+- id: to-comment-or-not
+  title: "To Comment or Not To Comment"
+  description: "When code comments help, when they hurt, and how to write documentation that ages well."
+  url: "https://indrajeetpatil.github.io/to-comment-or-not/"
+  category: language-agnostic-se
+
+- id: foss-for-enterprise
+  title: "FOSS for Enterprise"
+  description: "How organizations can strategically adopt and contribute to free and open-source software."
+  url: "https://indrajeetpatil.github.io/foss-for-enterprise/"
+  category: language-agnostic-se
+
+- id: parse-dont-pray
+  title: "Parse, Don't Pray"
+  description: "Robust data parsing strategies that fail fast and fail clearly."
+  url: "https://indrajeetpatil.github.io/parse-dont-pray/"
+  category: language-agnostic-se
+  status: in-progress
+
+- id: dry-r-package-development
+  title: "DRY R Package Development"
+  description: "Techniques for reducing redundancy and keeping R packages maintainable at scale."
+  url: "https://indrajeetpatil.github.io/dry-r-package-development/"
+  category: r-programming
+
+- id: preventive-r-package-care
+  title: "Preventive R Package Care"
+  description: "Proactive maintenance strategies to keep R packages healthy and avoid downstream breakage."
+  url: "https://indrajeetpatil.github.io/preventive-r-package-care/"
+  category: r-programming
+
+- id: intro-to-ggstatsplot
+  title: "Introduction to {ggstatsplot}: Informative Statistical Visualizations"
+  description: "How to create publication-ready plots with embedded statistical details using ggstatsplot."
+  url: "https://indrajeetpatil.github.io/intro-to-ggstatsplot/"
+  category: r-programming
+
+- id: intro-to-snapshot-testing
+  title: "Introduction to Snapshot Testing in R"
+  description: "A practical guide to using snapshot tests for robust R package quality assurance."
+  url: "https://indrajeetpatil.github.io/intro-to-snapshot-testing/"
+  category: r-programming
+
+- id: academia-to-industry
+  title: "From Academia to Industry"
+  description: "Lessons and practical advice for researchers transitioning to industry software engineering roles."
+  url: "https://indrajeetpatil.github.io/academia-to-industry/"
+  category: career-advice

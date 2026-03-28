@@ -1,0 +1,173 @@
+---
+const entries = [
+  {
+    title: "Senior Software Engineer",
+    org: "Carl Zeiss AG",
+    location: "Munich, Germany",
+    period: "2025 - Present",
+    type: "work" as const,
+    highlight: "Leading generative AI platform development",
+  },
+  {
+    title: "Senior Software Engineer",
+    org: "Preisenergie",
+    location: "Munich, Germany",
+    period: "2023 - 2024",
+    type: "work" as const,
+    highlight: "Full-stack applications for the German energy market",
+  },
+  {
+    title: "Senior Research Software Engineer",
+    org: "esqLABS",
+    location: "Berlin, Germany",
+    period: "2021 - 2022",
+    type: "work" as const,
+    highlight: "PBPK modeling and simulation systems in pharma",
+  },
+  {
+    title: "Postdoctoral Researcher",
+    org: "Max Planck Institute for Human Development",
+    location: "Berlin, Germany",
+    period: "2019 - 2021",
+    type: "research" as const,
+    highlight: "Computational modeling of moral behavior",
+  },
+  {
+    title: "Postdoctoral Researcher",
+    org: "Harvard University",
+    location: "Cambridge, MA, USA",
+    period: "2017 - 2019",
+    type: "research" as const,
+    highlight: "Social psychology research on moral cognition",
+  },
+  {
+    title: "Ph.D. in Neuroscience",
+    org: "SISSA",
+    location: "Trieste, Italy",
+    period: "2011 - 2016",
+    type: "education" as const,
+    highlight: "Summa cum laude \u2014 Moral decision-making research",
+  },
+  {
+    title: "M.Sc. in Physics",
+    org: "University of Pune",
+    location: "Pune, India",
+    period: "2008 - 2010",
+    type: "education" as const,
+  },
+  {
+    title: "B.Sc. in Physics",
+    org: "Fergusson College",
+    location: "Pune, India",
+    period: "2005 - 2008",
+    type: "education" as const,
+    highlight: "Best Undergraduate Thesis Award",
+  },
+];
+
+const typeColors = {
+  work: { dot: "bg-work", ring: "ring-work/20", label: "Industry" },
+  research: { dot: "bg-research", ring: "ring-research/20", label: "Research" },
+  education: { dot: "bg-education", ring: "ring-education/20", label: "Education" },
+};
+---
+
+<section class="py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-12 text-center">
+      <h2 class="reveal font-serif text-3xl font-bold text-accent sm:text-4xl">Journey</h2>
+      <p class="reveal reveal-delay-1 mt-3 text-text-muted">
+        Physics &rarr; Neuroscience &rarr; Software Engineering
+      </p>
+
+      <!-- Legend -->
+      <div class="reveal reveal-delay-2 mt-6 flex justify-center gap-6">
+        {
+          Object.values(typeColors).map((tc) => (
+            <div class="flex items-center gap-2 text-sm text-text-muted">
+              <span class:list={["inline-block h-3 w-3 rounded-full", tc.dot]} />
+              {tc.label}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Open-source note -->
+    <div class="reveal mb-12 rounded-xl border border-accent/20 bg-accent/5 px-6 py-4 text-center">
+      <p class="text-sm font-medium text-accent">
+        <span class="font-bold">Principal Open-Source Software Architect</span>
+        <span class="text-text-muted">&mdash; 2018 to Present &mdash;</span>
+        Architecting a software ecosystem with 75M+ downloads across multiple languages
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div
+        class="absolute left-4 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-translate-x-1/2"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="space-y-10">
+        {
+          entries.map((entry, i) => {
+            const colors = typeColors[entry.type];
+            const isLeft = i % 2 === 0;
+
+            return (
+              <div
+                class="reveal relative flex items-start gap-6 md:gap-0"
+                style={`transition-delay: ${i * 0.05}s`}
+              >
+                {/* Dot on the line */}
+                <div
+                  class:list={[
+                    "absolute left-4 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full ring-4",
+                    colors.dot,
+                    colors.ring,
+                    "md:left-1/2",
+                  ]}
+                  aria-hidden="true"
+                />
+
+                {/* Desktop: alternate left/right */}
+                <div
+                  class:list={[
+                    "ml-10 w-full md:ml-0 md:w-1/2",
+                    isLeft ? "md:pr-12 md:text-right" : "md:ml-auto md:pl-12",
+                  ]}
+                >
+                  <div class="rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class={isLeft ? "md:ml-auto md:text-right" : ""}>
+                        <span
+                          class:list={[
+                            "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium",
+                            entry.type === "work" && "bg-work/10 text-work",
+                            entry.type === "research" && "bg-research/10 text-research",
+                            entry.type === "education" && "bg-education/10 text-education",
+                          ]}
+                        >
+                          {entry.period}
+                        </span>
+                        <h3 class="mt-2 text-lg font-bold text-text">{entry.title}</h3>
+                        <p class="text-sm font-medium text-accent">{entry.org}</p>
+                        <p class="text-xs text-text-muted">{entry.location}</p>
+                        {entry.highlight && (
+                          <p class="mt-2 text-sm text-text-muted">{entry.highlight}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>

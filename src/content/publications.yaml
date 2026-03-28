@@ -1,0 +1,280 @@
+# Publications — ordered by year (descending)
+
+- id: makowski-2025-modelbased
+  title: "modelbased: An R package to make the most out of your statistical models"
+  authors: "Makowski, D., Ben-Shachar, M.S., Wiernik, B.M., Thériault, R., **Patil, I.**, & Lüdecke, D."
+  journal: "Journal of Open Source Software, 10(109), 7969"
+  year: 2025
+  doi: "10.21105/joss.07969"
+  pdf: "Makowski_JOSS_2025.pdf"
+  tags: ["software", "statistics"]
+
+- id: hester-2025-lintr
+  title: "Static Code Analysis for R"
+  authors: "Hester, J., Angly, F., Chirico, M., Hyde, R., Kun, R., **Patil, I.**, & Rosenstock, A."
+  journal: "Journal of Open Source Software, 10(108), 7240"
+  year: 2025
+  doi: "10.21105/joss.07240"
+  pdf: "hester_et_al_joss_2025.pdf"
+  tags: ["software"]
+
+- id: theriault-2024-outliers
+  title: "Check your outliers! An introduction to identifying statistical outliers in R with easystats"
+  authors: "Thériault, R., Ben-Shachar, M.S., **Patil, I.**, Lüdecke, D., Wiernik, B.M., & Makowski, D."
+  journal: "Behavior Research Methods, 56, 4162–4172"
+  year: 2024
+  doi: "10.3758/s13428-024-02356-w"
+  pdf: "Thériault_BRM_2024.pdf"
+  tags: ["software", "statistics"]
+
+- id: patil-2022-datawizard
+  title: "datawizard: An R Package for Easy Data Preparation and Statistical Transformations"
+  authors: "**Patil, I.**, Makowski, D., Ben-Shachar, M.S., Wiernik, B.M., Bacher, E., & Lüdecke, D."
+  journal: "Journal of Open Source Software, 7(78), 4684"
+  year: 2022
+  doi: "10.21105/joss.04684"
+  pdf: "Patil_JOSS_2022_datawizard.pdf"
+  tags: ["software", "statistics"]
+
+- id: ludecke-2021-see
+  title: "see: An R Package for Visualizing Statistical Models"
+  authors: "Lüdecke, D., **Patil, I.**, Ben-Shachar, M.S., Wiernik, B.M., Waggoner, P., & Makowski, D."
+  journal: "Journal of Open Source Software, 6(64), 3393"
+  year: 2021
+  doi: "10.21105/joss.03393"
+  pdf: "Lüdecke_JOSS_2021_see.pdf"
+  tags: ["software", "data-visualization"]
+
+- id: patil-2021-ggstatsplot
+  title: "Visualizations with statistical details: The 'ggstatsplot' approach"
+  authors: "**Patil, I.**"
+  journal: "Journal of Open Source Software, 6(61), 3167"
+  year: 2021
+  doi: "10.21105/joss.03167"
+  pdf: "Patil_JOSS_2021_ggstatsplot.pdf"
+  tags: ["software", "data-visualization"]
+
+- id: patil-2021-statsExpressions
+  title: "statsExpressions: R Package for Tidy Dataframes and Expressions with Statistical Details"
+  authors: "**Patil, I.**"
+  journal: "Journal of Open Source Software, 6(61), 3236"
+  year: 2021
+  doi: "10.21105/joss.03236"
+  pdf: "Patil_JOSS_2021_statsExpressions.pdf"
+  tags: ["software", "statistics"]
+
+- id: ludecke-2021-performance
+  title: "performance: An R Package for Assessment, Comparison and Testing of Statistical Models"
+  authors: "Lüdecke, D., Ben-Shachar, M.S., **Patil, I.**, Waggoner, P., & Makowski, D."
+  journal: "Journal of Open Source Software, 6(60), 3139"
+  year: 2021
+  doi: "10.21105/joss.03139"
+  pdf: "Lüdecke_JOSS_2021_performance.pdf"
+  tags: ["software", "statistics"]
+
+- id: patil-2021-forgiveness
+  title: "Reasoning supports forgiving accidental harms"
+  authors: "**Patil, I.**, & Tremolière, B."
+  journal: "Scientific Reports, 11:14418"
+  year: 2021
+  doi: "10.1038/s41598-021-93908-z"
+  pdf: "Patil_Tremoliere_2021.pdf"
+  supplementary_url: "https://osf.io/kbuxw/"
+  data_url: "https://osf.io/ayb7d/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: dhaliwal-2021-compensation
+  title: "Reputational and cooperative benefits of third-party compensation"
+  authors: "Dhaliwal, N.A.*, **Patil, I.*** , & Cushman, F.A."
+  journal: "Organizational Behavior and Human Decision Processes, 164, 27–51"
+  year: 2021
+  doi: "10.1016/j.obhdp.2021.01.003"
+  pdf: "Dhaliwal_2021.pdf"
+  supplementary_url: "https://osf.io/ey5dh/"
+  data_url: "https://osf.io/yhbrc/"
+  tags: ["moral-psychology"]
+
+- id: patil-2021-reasoning-utilitarian
+  title: "Reasoning supports utilitarian resolutions to moral dilemmas across diverse measures"
+  authors: "**Patil, I.*** , Zucchelli, M.M.*, Kool, W., Campbell, S., Fornasier, F., Calò, M., Silani, G., Cikara, M., & Cushman, F.A."
+  journal: "Journal of Personality and Social Psychology, 120(2), 443–460"
+  year: 2021
+  doi: "10.1037/pspp0000281"
+  pdf: "Patil_et_al_2020_JPSP.pdf"
+  supplementary_url: "https://osf.io/e7vzb/"
+  data_url: "https://osf.io/jdzfs/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: ludecke-2020-parameters
+  title: "Extracting, Computing and Exploring the Parameters of Statistical Models using R"
+  authors: "Lüdecke, D., Ben-Shachar, M.S., **Patil, I.**, & Makowski, D."
+  journal: "Journal of Open Source Software, 5(51), 2445"
+  year: 2020
+  doi: "10.21105/joss.02445"
+  pdf: "Lüdecke_JOSS_2020.pdf"
+  tags: ["software", "statistics"]
+
+- id: makowski-2020-correlation
+  title: "Methods and Algorithms for Correlation Analysis in R"
+  authors: "Makowski, D., Ben-Shachar, M.S., **Patil, I.**, & Lüdecke, D."
+  journal: "Journal of Open Source Software, 5(53), 2306"
+  year: 2020
+  doi: "10.21105/joss.02306"
+  pdf: "Makowski_JOSS_2020.pdf"
+  tags: ["software", "statistics"]
+
+- id: patil-2020-anxiety
+  title: "Moral cognition about harm in anxiety disorders: The Importance of Experienced Emotion"
+  authors: "**Patil, I.*** , Larsen, E.*, Kichic, R., & Gleichgerrcht, E."
+  journal: "Psychological Reports, 124(6), 2501–2523"
+  year: 2020
+  doi: "10.1177/0033294120964134"
+  pdf: "Patil_et_al_2020_Psych_Reports.pdf"
+  supplementary_url: "https://osf.io/fnvwg/"
+  data_url: "https://osf.io/pwsq6/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2018-neuroanatomical
+  title: "Neuroanatomical basis of concern-based altruism in virtual environment"
+  authors: "**Patil, I.**, Zanon, M.*, Novembre, G.*, Zangrando, N., Chittaro, L., & Silani, G."
+  journal: "Neuropsychologia, 116, 34–43"
+  year: 2018
+  doi: "10.1016/j.neuropsychologia.2017.02.015"
+  pdf: "Patil_et_al_2018_Neuropsychologia.pdf"
+  supplementary_url: "https://osf.io/3hr3q/files"
+  data_url: "https://osf.io/3hr3q/"
+  neuroimaging_url: "http://neurovault.org/collections/1908/"
+  tags: ["neuroscience"]
+
+- id: patil-2017-empathic-blame
+  title: "The behavioral and neural basis of empathic blame"
+  authors: "**Patil, I.**, Calò, M., Fornasier, F., Cushman, F.*, & Silani, G.*"
+  journal: "Scientific Reports, 7:5200"
+  year: 2017
+  doi: "10.1038/s41598-017-05299-9"
+  pdf: "Patil_et_al_2017_Sci_Rep_empathic_blame.pdf"
+  supplementary_pdf: "Patil_et_al_2017_Sci_Rep_empathic_blame_supp_info.pdf"
+  data_url: "https://osf.io/893eh/"
+  neuroimaging_url: "http://neurovault.org/collections/1712/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2017-vbm-forgiving
+  title: "Neuroanatomical correlates of forgiving unintentional harms"
+  authors: "**Patil, I.**, Calò, M.*, Fornasier, F.*, Young, L., & Silani, G."
+  journal: "Scientific Reports, 7:45967"
+  year: 2017
+  doi: "10.1038/srep45967"
+  pdf: "Patil_et_al_2017_Sci_Rep_VBM_moral.pdf"
+  supplementary_pdf: "Patil_et_al_2017_Sci_Rep_VBM_moral_supp_info.pdf"
+  data_url: "https://osf.io/akx6a/"
+  neuroimaging_url: "http://neurovault.org/collections/1689/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2017-ms-morality
+  title: "Elevated moral condemnation of third-party violations in multiple sclerosis patients"
+  authors: "**Patil, I.**, Young, L., Sinay, V., & Gleichgerrcht, E."
+  journal: "Social Neuroscience, 12(3), 308–329"
+  year: 2017
+  doi: "10.1080/17470919.2016.1175380"
+  pdf: "Patil_et_al_2017_Social_Neuroscience_MS_morality.pdf"
+  supplementary_pdf: "Patil_et_al_2017_Social_Neuroscience_MS_morality_supp_info.pdf"
+  data_url: "https://osf.io/kg3zd/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2016-autism
+  title: "Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism"
+  authors: "**Patil, I.*** , Melsbach, J.*, Hennig-Fast, K., & Silani, G."
+  journal: "Scientific Reports, 6:23637"
+  year: 2016
+  doi: "10.1038/srep23637"
+  pdf: "Patil_et_al_SREP_2016.pdf"
+  supplementary_pdf: "Patil_et_al_SREP_2016_supplementary.pdf"
+  data_url: "https://osf.io/kmf8h/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2015-psychopathy
+  title: "Trait psychopathy and utilitarian moral judgment: The mediating role of action aversion"
+  authors: "**Patil, I.**"
+  journal: "Journal of Cognitive Psychology, 27(3), 349–366"
+  year: 2015
+  doi: "10.1080/20445911.2015.1004334"
+  pdf: "Patil_JoCP_2015.pdf"
+  supplementary_pdf: "Patil_JoCP_2015_supplementary.pdf"
+  data_url: "https://osf.io/ykvn5/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2014-alexithymia
+  title: "Alexithymia increases moral acceptability of accidental harms"
+  authors: "**Patil, I.**, & Silani, G."
+  journal: "Journal of Cognitive Psychology, 26(5), 597–614"
+  year: 2014
+  doi: "10.1080/20445911.2014.929137"
+  pdf: "Patil_Silani_JoCP_2014.pdf"
+  supplementary_pdf: "Patil_Silani_JoCP_2014_supplementary.pdf"
+  data_url: "https://osf.io/d3qak/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2014-empathic-concern
+  title: "Reduced empathic concern leads to utilitarian moral judgments in trait alexithymia"
+  authors: "**Patil, I.**, & Silani, G."
+  journal: "Frontiers in Psychology, 5:501"
+  year: 2014
+  doi: "10.3389/fpsyg.2014.00501"
+  pdf: "Patil_Silani_Frontiers_in_Psychology_2014.pdf"
+  supplementary_pdf: "Patil_Silani_Frontiers_in_Psychology_2014_supplementary.pdf"
+  data_url: "https://osf.io/d3qak/"
+  tags: ["neuroscience", "moral-psychology"]
+
+- id: patil-2014-virtual-dilemmas
+  title: "Affective basis of judgment-behavior discrepancy in virtual experiences of moral dilemmas"
+  authors: "**Patil, I.**, Cogoni, C., Zangrando, N., Chittaro, L., & Silani, G."
+  journal: "Social Neuroscience, 9(1), 94–107"
+  year: 2014
+  doi: "10.1080/17470919.2013.870091"
+  pdf: "Patil_et_al_Social_Neuroscience_2014.pdf"
+  supplementary_url: "https://osf.io/aejvw/"
+  data_url: "https://osf.io/aejvw/"
+  tags: ["neuroscience", "moral-psychology"]
+
+# Preprints
+
+- id: ahlmann-eltze-2021-ggsignif
+  title: "ggsignif: R Package for Displaying Significance Brackets for 'ggplot2'"
+  authors: "Ahlmann-Eltze, C., & **Patil, I.**"
+  journal: "PsyArxiv"
+  year: 2021
+  doi: "10.31234/osf.io/7awm6"
+  tags: ["software", "data-visualization"]
+  type: preprint
+
+# Theses
+
+- id: phd-thesis
+  title: "A multimodal investigation of moral decision-making in harmful contexts"
+  authors: "**Patil, I.**"
+  journal: "SISSA, Trieste, Italy"
+  year: 2016
+  pdf: "PhD_thesis.pdf"
+  tags: ["neuroscience", "moral-psychology"]
+  type: thesis
+  thesis_type: "Ph.D. Dissertation"
+
+- id: msc-thesis
+  title: "Effect of hypergravity on amylase and total protein content in germinating rice seeds"
+  authors: "**Patil, I.**"
+  journal: "University of Pune, India"
+  year: 2010
+  pdf: "MSc_thesis.pdf"
+  tags: []
+  type: thesis
+  thesis_type: "M.Sc. Thesis"
+
+- id: bsc-thesis
+  title: "Theoretical studies of static friction at atomic scale for unlubricated BCC solids"
+  authors: "**Patil, I.**"
+  journal: "Fergusson College, Pune, India"
+  year: 2008
+  pdf: "BSc_thesis.pdf"
+  tags: []
+  type: thesis
+  thesis_type: "B.Sc. Thesis"

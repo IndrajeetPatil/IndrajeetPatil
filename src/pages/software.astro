@@ -1,0 +1,132 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/shared/PageHeader.astro";
+import { getCollection } from "astro:content";
+import downloadData from "../../data/download_counts.json";
+
+const allPackages = await getCollection("software");
+
+// Sort: creators first, then alphabetically
+const sortedPackages = allPackages.sort((a, b) => {
+  if (a.data.role !== b.data.role) {
+    return a.data.role === "creator" ? -1 : 1;
+  }
+  return a.data.name.localeCompare(b.data.name);
+});
+
+const totalFormatted = downloadData.total_formatted;
+const packagesData = downloadData.packages as Record<
+  string,
+  { downloads: number; formatted: string }
+>;
+
+function getDownloads(name: string): string {
+  return packagesData[name]?.formatted || "—";
+}
+
+const categoryLabels: Record<string, string> = {
+  "data-visualization": "Data Visualization",
+  "data-analysis": "Data Analysis",
+  "statistical-reporting": "Statistical Reporting",
+  "developer-tools": "Developer Tools",
+};
+---
+
+<BaseLayout
+  title="Software — Indrajeet Patil"
+  description="Open-source R packages for data analysis, visualization, and developer tooling. 60M+ total CRAN downloads."
+>
+  <PageHeader
+    title="Software"
+    subtitle={`Open-source R packages with ${totalFormatted}+ total CRAN downloads.`}
+  />
+
+  <div class="mx-auto max-w-6xl px-6 pb-20">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedPackages.map((pkg) => (
+          <article class="reveal group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all hover:shadow-md hover:border-accent/20">
+            <div class="flex items-start gap-4">
+              <!-- Hex sticker -->
+              {pkg.data.hex_sticker ? (
+                <img
+                  src={pkg.data.hex_sticker}
+                  alt={`${pkg.data.name} hex sticker`}
+                  class="h-16 w-16 flex-shrink-0 object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10 font-serif text-2xl font-bold text-accent">
+                  {pkg.data.name.charAt(0).toUpperCase()}
+                </div>
+              )}
+
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="truncate font-mono text-lg font-bold text-accent">
+                    {pkg.data.name}
+                  </h3>
+                  {pkg.data.role === "creator" && (
+                    <span class="flex-shrink-0 rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+                      Creator
+                    </span>
+                  )}
+                </div>
+                <p class="mt-1 text-sm text-text-muted line-clamp-2">
+                  {pkg.data.description}
+                </p>
+              </div>
+            </div>
+
+            <!-- Stats & category -->
+            <div class="mt-4 flex items-center justify-between">
+              <span class="rounded-full bg-tag-bg px-2.5 py-0.5 text-xs font-medium text-tag-text">
+                {categoryLabels[pkg.data.category]}
+              </span>
+              <span class="text-sm font-semibold text-accent" title="Total CRAN downloads">
+                {getDownloads(pkg.data.name)} downloads
+              </span>
+            </div>
+
+            <!-- Links -->
+            <div class="mt-4 flex gap-3 border-t border-border pt-3 text-sm">
+              {pkg.data.cran_url && (
+                <a
+                  href={pkg.data.cran_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-medium text-cta hover:text-cta-hover transition-colors"
+                >
+                  CRAN
+                </a>
+              )}
+              <a
+                href={pkg.data.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium text-cta hover:text-cta-hover transition-colors"
+              >
+                GitHub
+              </a>
+              {pkg.data.docs_url && (
+                <a
+                  href={pkg.data.docs_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-medium text-cta hover:text-cta-hover transition-colors"
+                >
+                  Docs
+                </a>
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Last updated note -->
+    <p class="mt-8 text-center text-xs text-text-muted">
+      Download counts from CRAN logs, last updated {new Date(downloadData.updated_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}.
+    </p>
+  </div>
+</BaseLayout>

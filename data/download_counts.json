@@ -1,0 +1,67 @@
+{
+  "updated_at": "2026-03-28T14:40:39.186884+00:00",
+  "total": 61875122,
+  "total_formatted": "61.9M",
+  "packages": {
+    "ggstatsplot": {
+      "downloads": 745213,
+      "formatted": "745K"
+    },
+    "statsExpressions": {
+      "downloads": 627069,
+      "formatted": "627K"
+    },
+    "datawizard": {
+      "downloads": 6700032,
+      "formatted": "6.7M"
+    },
+    "insight": {
+      "downloads": 10107487,
+      "formatted": "10.1M"
+    },
+    "performance": {
+      "downloads": 4548874,
+      "formatted": "4.5M"
+    },
+    "parameters": {
+      "downloads": 4436113,
+      "formatted": "4.4M"
+    },
+    "effectsize": {
+      "downloads": 3294417,
+      "formatted": "3.3M"
+    },
+    "correlation": {
+      "downloads": 1244343,
+      "formatted": "1.2M"
+    },
+    "bayestestR": {
+      "downloads": 4360351,
+      "formatted": "4.4M"
+    },
+    "modelbased": {
+      "downloads": 725731,
+      "formatted": "726K"
+    },
+    "report": {
+      "downloads": 369179,
+      "formatted": "369K"
+    },
+    "see": {
+      "downloads": 1003704,
+      "formatted": "1.0M"
+    },
+    "lintr": {
+      "downloads": 5327148,
+      "formatted": "5.3M"
+    },
+    "styler": {
+      "downloads": 4559128,
+      "formatted": "4.6M"
+    },
+    "ggsignif": {
+      "downloads": 13826333,
+      "formatted": "13.8M"
+    }
+  }
+}

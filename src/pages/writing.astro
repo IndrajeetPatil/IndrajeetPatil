@@ -1,0 +1,96 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/shared/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Writing — Indrajeet Patil"
+  description="Creative writing and popular science articles by Indrajeet Patil."
+>
+  <PageHeader
+    title="Writing"
+    subtitle="Creative fiction and popular science, beyond the peer-reviewed page."
+  />
+
+  <div class="mx-auto max-w-3xl px-6 pb-20">
+    <!-- Creative Writing -->
+    <section class="reveal mb-16">
+      <h2 class="mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+        Creative Writing
+      </h2>
+      <div class="space-y-6">
+        <article class="rounded-xl border border-border bg-surface p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-text">FREEZER</h3>
+          <p class="mt-1 text-sm font-medium text-accent">Adapted Screenplay</p>
+          <p class="mt-3 text-text-muted">
+            A screenplay adaptation exploring themes at the intersection of science, ethics, and human fragility.
+          </p>
+        </article>
+
+        <article class="rounded-xl border border-border bg-surface p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-text">Speculative Fiction Collection</h3>
+          <p class="mt-1 text-sm font-medium text-amber-600">In Progress</p>
+          <p class="mt-3 text-text-muted">
+            A collection of short stories exploring the boundaries of science, consciousness, and what it means to be human.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Popular Science -->
+    <section class="reveal">
+      <h2 class="mb-6 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+        Popular Science
+      </h2>
+      <div class="space-y-6">
+        <article class="rounded-xl border border-border bg-surface p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-text">Popular Science Articles in Marathi</h3>
+          <p class="mt-3 text-text-muted">
+            A collected volume of popular science articles written in Marathi, making scientific ideas accessible to a broader audience.
+          </p>
+          <a
+            href="/pdfs/writing/marathi_popsci_collected.pdf"
+            class="mt-4 inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
+            target="_blank"
+          >
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download PDF
+          </a>
+        </article>
+
+        <article class="rounded-xl border border-border bg-surface p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-text">
+            Chiral corrections to the Goldberger-Treiman relation
+          </h3>
+          <p class="mt-1 text-sm text-text-muted">
+            Ananthanarayan, B., & Patil, I. (2007)
+          </p>
+          <div class="mt-3 flex gap-3 text-sm">
+            <a
+              href="/pdfs/writing/Ananthanarayan_2007_baryons.pdf"
+              class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+              target="_blank"
+            >
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Baryons PDF
+            </a>
+            <a
+              href="/pdfs/writing/Ananthanarayan_2007_mesons.pdf"
+              class="inline-flex items-center gap-1 font-medium text-cta hover:text-cta-hover transition-colors"
+              target="_blank"
+            >
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Mesons PDF
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

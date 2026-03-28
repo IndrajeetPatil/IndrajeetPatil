@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import profileImg from "@assets/profile.jpg";
+import SocialLinks from "@components/shared/SocialLinks.astro";
+---
+
+<section class="relative overflow-hidden py-20 sm:py-28 lg:py-36">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+      <!-- Text -->
+      <div class="flex-1 text-center lg:text-left">
+        <p class="reveal text-sm font-semibold uppercase tracking-widest text-accent">
+          Senior Software Engineer
+        </p>
+        <h1
+          class="reveal reveal-delay-1 mt-4 font-serif text-5xl font-bold leading-tight tracking-tight text-text sm:text-6xl lg:text-7xl"
+        >
+          Indrajeet Patil
+        </h1>
+        <p class="reveal reveal-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-text-muted lg:text-xl">
+          10+ years shipping production systems across research, pharma, and
+          energy &mdash; from full-stack web platforms to LLM-powered enterprise
+          tools to open-source libraries with
+          <span class="font-semibold text-accent">75M+ downloads</span>. A path
+          through physics, neuroscience, and software engineering taught me the
+          real skill: learning how to learn, and translating ambiguous problems
+          into architectures that actually solve them.
+        </p>
+        <div class="reveal reveal-delay-3 mt-8">
+          <SocialLinks />
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="reveal flex-shrink-0">
+        <div
+          class="relative h-72 w-72 overflow-hidden rounded-2xl shadow-xl ring-4 ring-surface sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+        >
+          <Image
+            src={profileImg}
+            alt="Indrajeet Patil, a man with round gold-framed glasses wearing a dark suit jacket and white shirt"
+            width={384}
+            height={384}
+            class="h-full w-full object-cover object-top"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

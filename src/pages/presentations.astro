@@ -1,0 +1,144 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/shared/PageHeader.astro";
+import TagFilter from "@components/shared/TagFilter.astro";
+import { getCollection } from "astro:content";
+
+const allPresentations = await getCollection("presentations");
+
+const categoryLabels: Record<string, string> = {
+  "language-agnostic-se": "Language-Agnostic SE",
+  "r-programming": "R Programming",
+  "career-advice": "Career Advice",
+};
+
+// Compute category counts
+const catCounts = new Map<string, number>();
+for (const p of allPresentations) {
+  const cat = p.data.category;
+  catCounts.set(cat, (catCounts.get(cat) || 0) + 1);
+}
+
+const tags = [...catCounts.entries()].map(([value, count]) => ({
+  label: categoryLabels[value] || value,
+  value,
+  count,
+}));
+
+// Group by category
+const grouped = new Map<string, typeof allPresentations>();
+for (const p of allPresentations) {
+  const cat = p.data.category;
+  if (!grouped.has(cat)) grouped.set(cat, []);
+  grouped.get(cat)!.push(p);
+}
+
+const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"];
+---
+
+<BaseLayout
+  title="Presentations — Indrajeet Patil"
+  description="Slide decks on software engineering best practices, R programming, and career advice."
+>
+  <PageHeader
+    title="Presentations"
+    subtitle="Slide decks on software engineering practices, R programming, and navigating the academia-to-industry transition."
+  />
+
+  <div class="mx-auto max-w-5xl px-6 pb-20">
+    <!-- Category filter -->
+    <div class="reveal mb-12">
+      <TagFilter tags={tags} filterId="presentations" />
+    </div>
+
+    {
+      categoryOrder.map((cat) => {
+        const items = grouped.get(cat);
+        if (!items) return null;
+        return (
+          <section class="mb-16">
+            <h2 class="reveal mb-8 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+              {categoryLabels[cat]}
+            </h2>
+            <div class="space-y-8">
+              {items.map((pres) => (
+                <article
+                  class="reveal rounded-xl border border-border bg-surface shadow-sm overflow-hidden"
+                  data-filterable="presentations"
+                  data-tags={pres.data.category}
+                >
+                  <div class="p-5">
+                    <div class="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 class="text-lg font-bold text-accent">
+                          {pres.data.title}
+                          {pres.data.status === "in-progress" && (
+                            <span class="ml-2 inline-block rounded bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800">
+                              In Progress
+                            </span>
+                          )}
+                        </h3>
+                        <p class="mt-1 text-sm text-text-muted">
+                          {pres.data.description}
+                        </p>
+                      </div>
+                      <a
+                        href={pres.data.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex-shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
+                        aria-label={`Open ${pres.data.title} in new tab`}
+                      >
+                        Open &nearr;
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Iframe embed -->
+                  <div class="border-t border-border bg-bg-alt">
+                    <div class="presentation-embed relative" data-src={pres.data.url}>
+                      <button
+                        class="load-iframe flex w-full items-center justify-center gap-2 py-8 text-sm font-medium text-text-muted transition-colors hover:text-accent"
+                        aria-label={`Load preview of ${pres.data.title}`}
+                      >
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Click to load preview
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll(".load-iframe").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const container = btn.closest(".presentation-embed");
+        const src = container?.getAttribute("data-src");
+        if (!container || !src) return;
+
+        container.innerHTML = `
+          <div class="aspect-video">
+            <iframe
+              src="${src}"
+              class="h-full w-full"
+              loading="lazy"
+              title="Presentation preview"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+          </div>
+        `;
+      });
+    });
+  });
+</script>

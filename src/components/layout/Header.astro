@@ -1,0 +1,136 @@
+---
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/publications", label: "Publications" },
+  { href: "/presentations", label: "Presentations" },
+  { href: "/software", label: "Software" },
+  { href: "/writing", label: "Writing" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  id="site-header"
+>
+  <nav
+    class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+    aria-label="Main navigation"
+  >
+    <a
+      href="/"
+      class="font-serif text-xl font-bold tracking-tight text-accent hover:text-accent-light transition-colors"
+    >
+      Indrajeet Patil
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden gap-1 md:flex" role="list">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
+                  ? "bg-accent/10 text-accent"
+                  : "text-text-muted hover:text-accent hover:bg-accent/5",
+              ]}
+              aria-current={
+                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
+                  ? "page"
+                  : undefined
+              }
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Mobile menu button -->
+    <button
+      class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent md:hidden"
+      id="mobile-menu-btn"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+          id="hamburger-icon"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+          id="close-icon"
+          class="hidden"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="hidden md:hidden" id="mobile-menu">
+    <ul class="border-t border-border/50 bg-bg/95 px-6 py-4 backdrop-blur-md" role="list">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
+                  ? "bg-accent/10 text-accent"
+                  : "text-text-muted hover:text-accent hover:bg-accent/5",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const hamburger = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  btn?.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden");
+    hamburger?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  });
+
+  // Scroll-aware header background
+  const header = document.getElementById("site-header");
+  const updateHeader = () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("bg-bg/95", "backdrop-blur-md", "shadow-sm");
+    } else {
+      header?.classList.remove("bg-bg/95", "backdrop-blur-md", "shadow-sm");
+    }
+  };
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+</script>
