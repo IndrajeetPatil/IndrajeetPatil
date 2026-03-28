@@ -1,0 +1,109 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/shared/PageHeader.astro";
+
+const roles = [
+  {
+    title: "Senior Software Engineer",
+    org: "Carl Zeiss AG",
+    logo: "/images/logos/zeiss.svg",
+    location: "Munich, Germany",
+    period: "2025 - Present",
+    description: [
+      "Leading the design and development of a generative AI platform for enterprise applications across the Zeiss product portfolio.",
+      "Building LLM-powered tools and internal APIs that integrate large language models into existing optics and manufacturing workflows.",
+      "Developing full-stack web applications with React frontends and Python/Node.js backends deployed on cloud infrastructure.",
+    ],
+  },
+  {
+    title: "Senior Software Engineer",
+    org: "Preisenergie",
+    location: "Munich, Germany",
+    period: "2023 - 2024",
+    description: [
+      "Built full-stack web applications for the German energy market, including customer-facing dashboards and internal pricing tools.",
+      "Developed RESTful APIs and data pipelines processing real-time energy market data using Python and PostgreSQL.",
+      "Implemented CI/CD pipelines and containerized deployments with Docker and Kubernetes on AWS infrastructure.",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    org: "cynkra Analytics",
+    location: "Germany",
+    period: "2022",
+    description: [
+      "Created new and improved existing GitHub Actions workflows for R package development across the open-source ecosystem.",
+      "Improved and expanded open-source tools for formatting code and detecting code lints, contributing to lintr and styler packages.",
+    ],
+  },
+  {
+    title: "Senior Research Software Engineer",
+    org: "esqLABS",
+    location: "Berlin, Germany",
+    period: "2021 - 2022",
+    description: [
+      "Implemented PBPK (Physiologically Based Pharmacokinetic) modeling and simulation features in object-oriented R packages.",
+      "Developed visualization and reporting tools for pharmacological data analysis used by pharmaceutical researchers.",
+      "Contributed to the Open Systems Pharmacology Suite, an open-source platform for drug development simulations.",
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Industry Career — Indrajeet Patil"
+  description="Industry career timeline as a software engineer across optics, energy, analytics, and pharma."
+>
+  <PageHeader
+    title="Industry"
+    subtitle="After a decade in academia, I transitioned into industry software engineering — drawn not away from research, but toward a different kind of problem-solving. Each role has deepened my conviction that the best engineering comes from genuinely understanding the domain you're building for."
+  />
+
+  <div class="mx-auto max-w-4xl px-6 pb-20">
+    <div class="relative">
+      <!-- Vertical line -->
+      <div
+        class="absolute left-6 top-0 bottom-0 w-0.5 bg-border sm:left-8"
+        aria-hidden="true"
+      ></div>
+
+      <div class="space-y-12">
+        {
+          roles.map((role, i) => (
+            <div class="reveal relative flex gap-6 sm:gap-8" style={`transition-delay: ${i * 0.08}s`}>
+              {/* Dot */}
+              <div class="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border-2 border-border bg-surface shadow-sm sm:h-16 sm:w-16">
+                {role.logo ? (
+                  <img src={role.logo} alt={role.org} class="h-8 w-8 object-contain sm:h-10 sm:w-10" />
+                ) : (
+                  <span class="text-lg font-bold text-accent sm:text-xl">
+                    {role.org.charAt(0)}
+                  </span>
+                )}
+              </div>
+
+              {/* Content */}
+              <div class="flex-1 rounded-xl border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6">
+                <span class="inline-block rounded-full bg-work/10 px-2.5 py-0.5 text-xs font-medium text-work">
+                  {role.period}
+                </span>
+                <h3 class="mt-2 text-lg font-bold text-text">{role.title}</h3>
+                <p class="text-sm font-medium text-accent">{role.org}</p>
+                <p class="text-xs text-text-muted">{role.location}</p>
+
+                <ul class="mt-4 space-y-2">
+                  {role.description.map((item) => (
+                    <li class="flex gap-2 text-sm text-text-muted">
+                      <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-work/40" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>

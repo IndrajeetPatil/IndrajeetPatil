@@ -26,6 +26,10 @@ R_PACKAGES = [
     "ggsignif",
 ]
 
+PYPI_PACKAGES = [
+    "crosszip",
+]
+
 # (owner, repo) tuples for all packages
 GITHUB_REPOS = {
     "ggstatsplot": ("IndrajeetPatil", "ggstatsplot"),
@@ -68,6 +72,29 @@ def fetch_cran_downloads(client: httpx.Client) -> dict[str, int]:
     return {row["package"]: row["downloads"] for row in df.iter_rows(named=True)}
 
 
+def fetch_pypi_downloads(client: httpx.Client) -> dict[str, int]:
+    """Fetch recent download counts from PyPI Stats API."""
+    downloads = {}
+    for pkg in PYPI_PACKAGES:
+        try:
+            resp = client.get(
+                f"https://pypistats.org/api/packages/{pkg}/overall",
+                headers={"Accept": "application/json"},
+                timeout=10,
+            )
+            if resp.status_code == 200:
+                data = resp.json().get("data", [])
+                total = sum(row.get("downloads", 0) for row in data if row.get("category") == "without_mirrors")
+                downloads[pkg] = total
+            else:
+                print(f"  Warning: PyPI Stats API returned {resp.status_code} for {pkg}")
+                downloads[pkg] = 0
+        except httpx.HTTPError as e:
+            print(f"  Warning: Failed to fetch PyPI downloads for {pkg}: {e}")
+            downloads[pkg] = 0
+    return downloads
+
+
 def fetch_github_stars(client: httpx.Client) -> dict[str, int]:
     """Fetch star counts from GitHub API for all repos."""
     stars = {}
@@ -92,21 +119,27 @@ def fetch_github_stars(client: httpx.Client) -> dict[str, int]:
 def main() -> None:
     with httpx.Client() as client:
         print("Fetching CRAN download counts...")
-        downloads = fetch_cran_downloads(client)
+        cran_downloads = fetch_cran_downloads(client)
+
+        print("Fetching PyPI download counts...")
+        pypi_downloads = fetch_pypi_downloads(client)
 
         print("Fetching GitHub stars...")
         stars = fetch_github_stars(client)
 
+    # Merge all downloads
+    all_downloads = {**cran_downloads, **pypi_downloads}
+
     # Build per-package data
     packages: dict[str, dict] = {}
-    for pkg in [*R_PACKAGES, "crosszip"]:
+    for pkg in [*R_PACKAGES, *PYPI_PACKAGES]:
         entry: dict = {"stars": stars.get(pkg, 0)}
-        if pkg in downloads:
-            entry["downloads"] = downloads[pkg]
-            entry["downloads_formatted"] = format_count(downloads[pkg])
+        if pkg in all_downloads:
+            entry["downloads"] = all_downloads[pkg]
+            entry["downloads_formatted"] = format_count(all_downloads[pkg])
         packages[pkg] = entry
 
-    total_downloads = sum(downloads.values())
+    total_downloads = sum(all_downloads.values())
 
     result = {
         "updated_at": datetime.now(tz=timezone.utc).isoformat(),

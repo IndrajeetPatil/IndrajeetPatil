@@ -1,6 +1,10 @@
 ---
+import downloadData from "../../../data/download_counts.json";
+
+const totalDownloads = downloadData.total_downloads_formatted;
+
 const stats = [
-  { value: "75M+", label: "Open-Source Downloads" },
+  { value: `${totalDownloads}+`, label: "Open-Source Downloads" },
   { value: "23", label: "Peer-Reviewed Publications" },
   { value: "17,000+", label: "Citations" },
 ];

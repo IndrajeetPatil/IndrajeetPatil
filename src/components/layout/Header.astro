@@ -5,11 +5,31 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/publications", label: "Publications" },
   { href: "/presentations", label: "Presentations" },
-  { href: "/software", label: "Software" },
-  { href: "/writing", label: "Writing" },
+  {
+    label: "Career",
+    children: [
+      { href: "/career/industry", label: "Industry" },
+      { href: "/career/open-source", label: "Open-Source" },
+      { href: "/career/research", label: "Research" },
+    ],
+  },
+  {
+    label: "Writing",
+    children: [
+      { href: "/writing/creative", label: "Creative Writing" },
+      { href: "/writing/popular-science", label: "Popular Science" },
+    ],
+  },
 ];
 
 const currentPath = Astro.url.pathname;
+
+function isActive(link: { href?: string; children?: { href: string }[] }): boolean {
+  if (link.href) {
+    return currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href));
+  }
+  return link.children?.some((c) => currentPath.startsWith(c.href)) ?? false;
+}
 ---
 
 <header
@@ -30,26 +50,60 @@ const currentPath = Astro.url.pathname;
     <!-- Desktop nav -->
     <ul class="hidden gap-1 md:flex" role="list">
       {
-        navLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class:list={[
-                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                  ? "bg-accent/10 text-accent"
-                  : "text-text-muted hover:text-accent hover:bg-accent/5",
-              ]}
-              aria-current={
-                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                  ? "page"
-                  : undefined
-              }
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
+        navLinks.map((link) =>
+          "children" in link && link.children ? (
+            <li class="group relative">
+              <button
+                class:list={[
+                  "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  isActive(link)
+                    ? "bg-accent/10 text-accent"
+                    : "text-text-muted hover:text-accent hover:bg-accent/5",
+                ]}
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                {link.label}
+                <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul class="invisible absolute left-0 top-full z-50 mt-1 min-w-[10rem] rounded-lg border border-border bg-surface py-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100" role="list">
+                {link.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      class:list={[
+                        "block px-4 py-2 text-sm transition-colors",
+                        currentPath.startsWith(child.href)
+                          ? "bg-accent/10 text-accent font-medium"
+                          : "text-text-muted hover:bg-accent/5 hover:text-accent",
+                      ]}
+                      aria-current={currentPath.startsWith(child.href) ? "page" : undefined}
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  isActive(link)
+                    ? "bg-accent/10 text-accent"
+                    : "text-text-muted hover:text-accent hover:bg-accent/5",
+                ]}
+                aria-current={isActive(link) ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ),
+        )
       }
     </ul>
 
@@ -62,37 +116,11 @@ const currentPath = Astro.url.pathname;
         class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent transition-colors"
         aria-label="Toggle dark mode"
       >
-        <!-- Sun icon (shown in dark mode) -->
-        <svg
-          class="h-5 w-5 hidden"
-          id="sun-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          ></path>
+        <svg class="h-5 w-5 hidden" id="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
-        <!-- Moon icon (shown in light mode) -->
-        <svg
-          class="h-5 w-5"
-          id="moon-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          ></path>
+        <svg class="h-5 w-5" id="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
 
@@ -104,26 +132,9 @@ const currentPath = Astro.url.pathname;
         aria-controls="mobile-menu"
         aria-label="Toggle navigation menu"
       >
-        <svg
-          class="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-            id="hamburger-icon"></path>
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-            id="close-icon"
-            class="hidden"></path>
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="hamburger-icon" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="close-icon" class="hidden" />
         </svg>
       </button>
     </div>
@@ -133,21 +144,44 @@ const currentPath = Astro.url.pathname;
   <div class="hidden md:hidden" id="mobile-menu">
     <ul class="border-t border-border/50 bg-bg/95 px-6 py-4 backdrop-blur-md" role="list">
       {
-        navLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class:list={[
-                "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                  ? "bg-accent/10 text-accent"
-                  : "text-text-muted hover:text-accent hover:bg-accent/5",
-              ]}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
+        navLinks.map((link) =>
+          "children" in link && link.children ? (
+            <>
+              <li class="mt-3 mb-1 text-xs font-semibold uppercase tracking-widest text-text-muted px-3">
+                {link.label}
+              </li>
+              {link.children.map((child) => (
+                <li>
+                  <a
+                    href={child.href}
+                    class:list={[
+                      "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                      currentPath.startsWith(child.href)
+                        ? "bg-accent/10 text-accent"
+                        : "text-text-muted hover:text-accent hover:bg-accent/5",
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </>
+          ) : (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                  isActive(link)
+                    ? "bg-accent/10 text-accent"
+                    : "text-text-muted hover:text-accent hover:bg-accent/5",
+                ]}
+              >
+                {link.label}
+              </a>
+            </li>
+          ),
+        )
       }
     </ul>
   </div>

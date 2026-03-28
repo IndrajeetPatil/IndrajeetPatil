@@ -86,8 +86,11 @@
       link.href = "/pagefind/pagefind-ui.css";
       document.head.appendChild(link);
 
-      // @ts-ignore — Pagefind is loaded at runtime from the built site
-      const pagefind = await import(/* @vite-ignore */ "/pagefind/pagefind-ui.js");
+      // Pagefind is only available after a production build — construct the path
+      // dynamically so Vite's import analysis doesn't try to resolve it in dev.
+      const pagefindPath = ["/pagefind", "pagefind-ui.js"].join("/");
+      // @ts-ignore
+      const pagefind = await import(/* @vite-ignore */ pagefindPath);
       new pagefind.PagefindUI({
         element: "#search-widget",
         showSubResults: true,

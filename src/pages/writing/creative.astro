@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/shared/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Creative Writing — Indrajeet Patil"
+  description="Screenplays and literary fiction exploring science, technology, and human resilience."
+>
+  <PageHeader
+    title="Creative Writing"
+    subtitle="Fiction has always been my way of asking questions that papers can't: not how we decide, but what it costs us."
+  />
+
+  <div class="mx-auto max-w-3xl px-6 pb-20">
+    <div class="space-y-8">
+      <article class="reveal rounded-xl border border-border bg-surface p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-text">Freezer</h3>
+        <p class="mt-1 text-sm font-medium text-accent">Adapted Screenplay</p>
+        <p class="mt-3 text-text-muted">
+          Adapted from the Marathi short story "Sheetkapat" by Subodh P. Javadekar. A science fiction screenplay that interweaves first contact, climate catastrophe, and an intimate love story across three timelines.
+        </p>
+      </article>
+
+      <article class="reveal rounded-xl border border-border bg-surface p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-text">Distorted Mirrors: What We're Willing to Lose</h3>
+        <p class="mt-1 text-sm font-medium text-education">In Progress</p>
+        <p class="mt-3 text-text-muted">
+          A collection of literary speculative fiction set in and around India, exploring what ordinary people stand to lose &mdash; and gain &mdash; as technology reshapes the boundaries of work, love, and moral responsibility.
+        </p>
+      </article>
+    </div>
+  </div>
+</BaseLayout>
