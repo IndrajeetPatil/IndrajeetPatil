@@ -48,7 +48,7 @@ function isActive(link: { href?: string; children?: { href: string }[] }): boole
     </a>
 
     <!-- Desktop nav -->
-    <ul class="hidden gap-1 md:flex" role="list">
+    <ul class="hidden items-center gap-1 md:flex" role="list">
       {
         navLinks.map((link) =>
           "children" in link && link.children ? (
@@ -92,7 +92,7 @@ function isActive(link: { href?: string; children?: { href: string }[] }): boole
               <a
                 href={link.href}
                 class:list={[
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   isActive(link)
                     ? "bg-accent/10 text-accent"
                     : "text-text-muted hover:text-accent hover:bg-accent/5",
