@@ -1,67 +1,85 @@
 {
-  "updated_at": "2026-03-28T14:40:39.186884+00:00",
-  "total": 61875122,
-  "total_formatted": "61.9M",
+  "updated_at": "2026-03-28T14:54:21.423764+00:00",
+  "total_downloads": 61875122,
+  "total_downloads_formatted": "61.9M",
   "packages": {
     "ggstatsplot": {
+      "stars": 2171,
       "downloads": 745213,
-      "formatted": "745K"
+      "downloads_formatted": "745K"
     },
     "statsExpressions": {
+      "stars": 315,
       "downloads": 627069,
-      "formatted": "627K"
+      "downloads_formatted": "627K"
     },
     "datawizard": {
+      "stars": 235,
       "downloads": 6700032,
-      "formatted": "6.7M"
+      "downloads_formatted": "6.7M"
     },
     "insight": {
+      "stars": 434,
       "downloads": 10107487,
-      "formatted": "10.1M"
+      "downloads_formatted": "10.1M"
     },
     "performance": {
+      "stars": 1135,
       "downloads": 4548874,
-      "formatted": "4.5M"
+      "downloads_formatted": "4.5M"
     },
     "parameters": {
+      "stars": 486,
       "downloads": 4436113,
-      "formatted": "4.4M"
+      "downloads_formatted": "4.4M"
     },
     "effectsize": {
+      "stars": 347,
       "downloads": 3294417,
-      "formatted": "3.3M"
+      "downloads_formatted": "3.3M"
     },
     "correlation": {
+      "stars": 450,
       "downloads": 1244343,
-      "formatted": "1.2M"
+      "downloads_formatted": "1.2M"
     },
     "bayestestR": {
+      "stars": 590,
       "downloads": 4360351,
-      "formatted": "4.4M"
+      "downloads_formatted": "4.4M"
     },
     "modelbased": {
+      "stars": 260,
       "downloads": 725731,
-      "formatted": "726K"
+      "downloads_formatted": "726K"
     },
     "report": {
+      "stars": 713,
       "downloads": 369179,
-      "formatted": "369K"
+      "downloads_formatted": "369K"
     },
     "see": {
+      "stars": 944,
       "downloads": 1003704,
-      "formatted": "1.0M"
+      "downloads_formatted": "1.0M"
     },
     "lintr": {
+      "stars": 1271,
       "downloads": 5327148,
-      "formatted": "5.3M"
+      "downloads_formatted": "5.3M"
     },
     "styler": {
+      "stars": 773,
       "downloads": 4559128,
-      "formatted": "4.6M"
+      "downloads_formatted": "4.6M"
     },
     "ggsignif": {
+      "stars": 612,
       "downloads": 13826333,
-      "formatted": "13.8M"
+      "downloads_formatted": "13.8M"
+    },
+    "crosszip": {
+      "stars": 5
     }
   }
 }

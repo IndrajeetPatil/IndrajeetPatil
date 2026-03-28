@@ -1,4 +1,6 @@
 ---
+import Search from "@components/shared/Search.astro";
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/publications", label: "Publications" },
@@ -51,6 +53,9 @@ const currentPath = Astro.url.pathname;
       }
     </ul>
 
+    <div class="flex items-center gap-2">
+      <Search />
+
     <!-- Mobile menu button -->
     <button
       class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:bg-accent/5 hover:text-accent md:hidden"
@@ -81,6 +86,7 @@ const currentPath = Astro.url.pathname;
           class="hidden"></path>
       </svg>
     </button>
+    </div>
   </nav>
 
   <!-- Mobile menu -->

@@ -1,4 +1,4 @@
-name: Update Download Counts
+name: Update Data
 
 on:
   schedule:
@@ -13,18 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-      - name: Fetch download counts
+      - name: Fetch download counts and GitHub stars
         run: uv run --project scripts scripts/fetch_downloads.py
+
+      - name: Fetch citation counts
+        run: uv run --project scripts scripts/fetch_citations.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/download_counts.json
-          git diff --staged --quiet || git commit -m "chore: update CRAN download counts"
+          git add data/download_counts.json data/citation_counts.json
+          git diff --staged --quiet || git commit -m "chore: update download counts, stars, and citations"
           git push

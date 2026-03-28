@@ -146,3 +146,13 @@
   hex_sticker: /images/hex/ggsignif.svg
   cran_url: "https://cran.r-project.org/package=ggsignif"
   github_url: "https://github.com/const-ae/ggsignif"
+
+- id: crosszip
+  name: crosszip
+  description: "Apply functions to all combinations of elements from multiple iterables"
+  role: creator
+  language: Python
+  category: utilities
+  pypi_url: "https://pypi.org/project/crosszip/"
+  github_url: "https://github.com/IndrajeetPatil/crosszip"
+  docs_url: "https://indrajeetpatil.github.io/crosszip/"

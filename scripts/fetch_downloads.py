@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch CRAN download counts for R packages and write to data/download_counts.json."""
+"""Fetch CRAN download counts, PyPI download counts, and GitHub stars, then write to data/download_counts.json."""
 
 import json
 from datetime import datetime, timezone
@@ -8,7 +8,7 @@ from pathlib import Path
 import httpx
 import polars as pl
 
-PACKAGES = [
+R_PACKAGES = [
     "ggstatsplot",
     "statsExpressions",
     "datawizard",
@@ -26,16 +26,28 @@ PACKAGES = [
     "ggsignif",
 ]
 
+# (owner, repo) tuples for all packages
+GITHUB_REPOS = {
+    "ggstatsplot": ("IndrajeetPatil", "ggstatsplot"),
+    "statsExpressions": ("IndrajeetPatil", "statsExpressions"),
+    "datawizard": ("easystats", "datawizard"),
+    "insight": ("easystats", "insight"),
+    "performance": ("easystats", "performance"),
+    "parameters": ("easystats", "parameters"),
+    "effectsize": ("easystats", "effectsize"),
+    "correlation": ("easystats", "correlation"),
+    "bayestestR": ("easystats", "bayestestR"),
+    "modelbased": ("easystats", "modelbased"),
+    "report": ("easystats", "report"),
+    "see": ("easystats", "see"),
+    "lintr": ("r-lib", "lintr"),
+    "styler": ("r-lib", "styler"),
+    "ggsignif": ("const-ae", "ggsignif"),
+    "crosszip": ("IndrajeetPatil", "crosszip"),
+}
+
 CRAN_API = "https://cranlogs.r-pkg.org/downloads/total/1900-01-01:2099-12-31"
 OUTPUT = Path(__file__).parent.parent / "data" / "download_counts.json"
-
-
-def fetch_counts() -> pl.DataFrame:
-    """Fetch all-time download counts from CRAN logs API."""
-    package_str = ",".join(PACKAGES)
-    response = httpx.get(f"{CRAN_API}/{package_str}", timeout=30)
-    response.raise_for_status()
-    return pl.DataFrame(response.json()).select("package", "downloads")
 
 
 def format_count(n: int) -> str:
@@ -47,26 +59,65 @@ def format_count(n: int) -> str:
     return str(n)
 
 
+def fetch_cran_downloads(client: httpx.Client) -> dict[str, int]:
+    """Fetch all-time download counts from CRAN logs API."""
+    package_str = ",".join(R_PACKAGES)
+    response = client.get(f"{CRAN_API}/{package_str}", timeout=30)
+    response.raise_for_status()
+    df = pl.DataFrame(response.json()).select("package", "downloads")
+    return {row["package"]: row["downloads"] for row in df.iter_rows(named=True)}
+
+
+def fetch_github_stars(client: httpx.Client) -> dict[str, int]:
+    """Fetch star counts from GitHub API for all repos."""
+    stars = {}
+    for pkg, (owner, repo) in GITHUB_REPOS.items():
+        try:
+            resp = client.get(
+                f"https://api.github.com/repos/{owner}/{repo}",
+                headers={"Accept": "application/vnd.github.v3+json"},
+                timeout=10,
+            )
+            if resp.status_code == 200:
+                stars[pkg] = resp.json().get("stargazers_count", 0)
+            else:
+                print(f"  Warning: GitHub API returned {resp.status_code} for {owner}/{repo}")
+                stars[pkg] = 0
+        except httpx.HTTPError as e:
+            print(f"  Warning: Failed to fetch stars for {owner}/{repo}: {e}")
+            stars[pkg] = 0
+    return stars
+
+
 def main() -> None:
-    df = fetch_counts()
+    with httpx.Client() as client:
+        print("Fetching CRAN download counts...")
+        downloads = fetch_cran_downloads(client)
 
-    packages = {
-        row["package"]: {"downloads": row["downloads"], "formatted": format_count(row["downloads"])}
-        for row in df.iter_rows(named=True)
-    }
+        print("Fetching GitHub stars...")
+        stars = fetch_github_stars(client)
 
-    total = df["downloads"].sum()
+    # Build per-package data
+    packages: dict[str, dict] = {}
+    for pkg in [*R_PACKAGES, "crosszip"]:
+        entry: dict = {"stars": stars.get(pkg, 0)}
+        if pkg in downloads:
+            entry["downloads"] = downloads[pkg]
+            entry["downloads_formatted"] = format_count(downloads[pkg])
+        packages[pkg] = entry
+
+    total_downloads = sum(downloads.values())
 
     result = {
         "updated_at": datetime.now(tz=timezone.utc).isoformat(),
-        "total": total,
-        "total_formatted": format_count(total),
+        "total_downloads": total_downloads,
+        "total_downloads_formatted": format_count(total_downloads),
         "packages": packages,
     }
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(result, indent=2) + "\n")
-    print(f"Updated {OUTPUT}: total={total:,} downloads ({format_count(total)})")
+    print(f"Updated {OUTPUT}: total={total_downloads:,} downloads ({format_count(total_downloads)})")
 
 
 if __name__ == "__main__":

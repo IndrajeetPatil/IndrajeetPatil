@@ -60,53 +60,67 @@ const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"]
             <h2 class="reveal mb-8 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
               {categoryLabels[cat]}
             </h2>
-            <div class="space-y-8">
+            <div class="grid gap-6 sm:grid-cols-2">
               {items.map((pres) => (
                 <article
-                  class="reveal rounded-xl border border-border bg-surface shadow-sm overflow-hidden"
+                  class="reveal group overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md hover:border-accent/20"
                   data-filterable="presentations"
                   data-tags={pres.data.category}
                 >
+                  {/* Preview image */}
+                  <a
+                    href={pres.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block overflow-hidden"
+                    aria-label={`Open ${pres.data.title}`}
+                  >
+                    {pres.data.image ? (
+                      <img
+                        src={pres.data.image}
+                        alt={`Preview of ${pres.data.title}`}
+                        class="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="flex aspect-video items-center justify-center bg-gradient-to-br from-accent/10 to-cta/10">
+                        <span class="font-serif text-2xl font-bold text-accent/40">
+                          {pres.data.title.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                  </a>
+
+                  {/* Content */}
                   <div class="p-5">
-                    <div class="flex items-start justify-between gap-4">
+                    <div class="flex items-start justify-between gap-3">
                       <div>
-                        <h3 class="text-lg font-bold text-accent">
+                        <h3 class="text-lg font-bold leading-snug text-accent">
                           {pres.data.title}
                           {pres.data.status === "in-progress" && (
-                            <span class="ml-2 inline-block rounded bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800">
+                            <span class="ml-2 inline-block rounded bg-amber-100 px-2 py-0.5 align-middle text-xs font-medium text-amber-800">
                               In Progress
                             </span>
                           )}
                         </h3>
-                        <p class="mt-1 text-sm text-text-muted">
+                        <p class="mt-1.5 text-sm text-text-muted">
                           {pres.data.description}
                         </p>
                       </div>
+                    </div>
+
+                    <div class="mt-4 flex items-center gap-3">
                       <a
                         href={pres.data.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex-shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
-                        aria-label={`Open ${pres.data.title} in new tab`}
+                        class="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
                       >
-                        Open &nearr;
-                      </a>
-                    </div>
-                  </div>
-
-                  <!-- Iframe embed -->
-                  <div class="border-t border-border bg-bg-alt">
-                    <div class="presentation-embed relative" data-src={pres.data.url}>
-                      <button
-                        class="load-iframe flex w-full items-center justify-center gap-2 py-8 text-sm font-medium text-text-muted transition-colors hover:text-accent"
-                        aria-label={`Load preview of ${pres.data.title}`}
-                      >
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                        Click to load preview
-                      </button>
+                        View Slides
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -118,27 +132,3 @@ const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"]
     }
   </div>
 </BaseLayout>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    document.querySelectorAll(".load-iframe").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const container = btn.closest(".presentation-embed");
-        const src = container?.getAttribute("data-src");
-        if (!container || !src) return;
-
-        container.innerHTML = `
-          <div class="aspect-video">
-            <iframe
-              src="${src}"
-              class="h-full w-full"
-              loading="lazy"
-              title="Presentation preview"
-              sandbox="allow-scripts allow-same-origin"
-            ></iframe>
-          </div>
-        `;
-      });
-    });
-  });
-</script>

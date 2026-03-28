@@ -1,10 +1,11 @@
-.PHONY: dev build preview lint format clean downloads hex-stickers update help
+.PHONY: dev build preview lint format clean downloads citations presentation-screenshots hex-stickers update help
 
 dev: ## Start Astro dev server
 	pnpm astro dev
 
-build: ## Production build
+build: ## Production build (includes Pagefind indexing)
 	pnpm astro build
+	pnpm pagefind --site dist
 
 preview: ## Preview production build locally
 	pnpm astro preview
@@ -16,8 +17,14 @@ lint: ## Lint and type-check
 format: ## Format source files
 	pnpm biome format --write src/
 
-downloads: ## Fetch CRAN download counts
+downloads: ## Fetch CRAN download counts and GitHub stars
 	cd scripts && uv run fetch_downloads.py
+
+citations: ## Fetch Google Scholar citation counts
+	cd scripts && uv run fetch_citations.py
+
+presentation-screenshots: ## Capture presentation slide screenshots
+	cd scripts && uv run --group screenshots python capture_presentations.py
 
 hex-stickers: ## Download R package hex sticker images
 	@echo "Fetching hex stickers..."
@@ -36,7 +43,7 @@ hex-stickers: ## Download R package hex sticker images
 	@curl -sfL -o public/images/hex/see.png "https://raw.githubusercontent.com/easystats/see/main/man/figures/logo.png" && echo "  see" || echo "  see (failed)"
 	@curl -sfL -o public/images/hex/lintr.png "https://raw.githubusercontent.com/r-lib/lintr/main/man/figures/logo.png" && echo "  lintr" || echo "  lintr (failed)"
 	@curl -sfL -o public/images/hex/styler.png "https://raw.githubusercontent.com/r-lib/styler/main/man/figures/logo.png" && echo "  styler" || echo "  styler (failed)"
-	@curl -sfL -o public/images/hex/ggsignif.png "https://raw.githubusercontent.com/const-ae/ggsignif/main/man/figures/logo.png" && echo "  ggsignif" || echo "  ggsignif (failed)"
+	@curl -sfL -o public/images/hex/ggsignif.svg "https://raw.githubusercontent.com/const-ae/ggsignif/main/man/figures/logo.svg" && echo "  ggsignif" || echo "  ggsignif (failed)"
 	@echo "Done."
 
 clean: ## Remove build artifacts

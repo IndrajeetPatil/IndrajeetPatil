@@ -30,6 +30,7 @@ const presentations = defineCollection({
     url: z.string(),
     category: z.enum(["language-agnostic-se", "r-programming", "career-advice"]),
     status: z.enum(["published", "in-progress"]).default("published"),
+    image: z.string().optional(),
   }),
 });
 
@@ -40,14 +41,17 @@ const software = defineCollection({
     name: z.string(),
     description: z.string(),
     role: z.enum(["creator", "author"]),
+    language: z.enum(["R", "Python"]).default("R"),
     category: z.enum([
       "data-visualization",
       "data-analysis",
       "statistical-reporting",
       "developer-tools",
+      "utilities",
     ]),
     hex_sticker: z.string().optional(),
     cran_url: z.string().optional(),
+    pypi_url: z.string().optional(),
     github_url: z.string(),
     docs_url: z.string().optional(),
   }),

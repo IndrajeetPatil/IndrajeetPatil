@@ -6,3 +6,4 @@ dependencies = ["polars>=1.0", "httpx>=0.28"]
 
 [dependency-groups]
 dev = []
+screenshots = ["playwright>=1.50"]
