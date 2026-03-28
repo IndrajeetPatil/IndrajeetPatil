@@ -29,7 +29,6 @@ const presentations = defineCollection({
     description: z.string(),
     url: z.string(),
     category: z.enum(["language-agnostic-se", "r-programming", "career-advice"]),
-    status: z.enum(["published", "in-progress"]).default("published"),
     image: z.string().optional(),
   }),
 });

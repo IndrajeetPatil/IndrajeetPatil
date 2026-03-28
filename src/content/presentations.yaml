@@ -24,7 +24,6 @@
   description: "Robust data parsing strategies that fail fast and fail clearly."
   url: "https://indrajeetpatil.github.io/parse-dont-pray/"
   category: language-agnostic-se
-  status: in-progress
   image: /images/presentations/parse-dont-pray.png
 
 - id: dry-r-package-development

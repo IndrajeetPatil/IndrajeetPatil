@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PageHeader from "@components/shared/PageHeader.astro";
-import TagFilter from "@components/shared/TagFilter.astro";
+import TableOfContents from "@components/shared/TableOfContents.astro";
 import { getCollection } from "astro:content";
 
 const allPresentations = await getCollection("presentations");
@@ -12,19 +12,6 @@ const categoryLabels: Record<string, string> = {
   "career-advice": "Career Advice",
 };
 
-// Compute category counts
-const catCounts = new Map<string, number>();
-for (const p of allPresentations) {
-  const cat = p.data.category;
-  catCounts.set(cat, (catCounts.get(cat) || 0) + 1);
-}
-
-const tags = [...catCounts.entries()].map(([value, count]) => ({
-  label: categoryLabels[value] || value,
-  value,
-  count,
-}));
-
 // Group by category
 const grouped = new Map<string, typeof allPresentations>();
 for (const p of allPresentations) {
@@ -34,6 +21,10 @@ for (const p of allPresentations) {
 }
 
 const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"];
+
+const tocEntries = categoryOrder
+  .filter((cat) => grouped.has(cat))
+  .map((cat) => ({ id: cat, label: categoryLabels[cat] }));
 ---
 
 <BaseLayout
@@ -46,89 +37,90 @@ const categoryOrder = ["language-agnostic-se", "r-programming", "career-advice"]
   />
 
   <div class="mx-auto max-w-5xl px-6 pb-20">
-    <!-- Category filter -->
-    <div class="reveal mb-12">
-      <TagFilter tags={tags} filterId="presentations" />
+    <!-- Mobile ToC -->
+    <div class="reveal mb-8 lg:hidden">
+      <TableOfContents entries={tocEntries} variant="inline" />
     </div>
 
-    {
-      categoryOrder.map((cat) => {
-        const items = grouped.get(cat);
-        if (!items) return null;
-        return (
-          <section class="mb-16">
-            <h2 class="reveal mb-8 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
-              {categoryLabels[cat]}
-            </h2>
-            <div class="grid gap-6 sm:grid-cols-2">
-              {items.map((pres) => (
-                <article
-                  class="reveal group overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md hover:border-accent/20"
-                  data-filterable="presentations"
-                  data-tags={pres.data.category}
-                >
-                  {/* Preview image */}
-                  <a
-                    href={pres.data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block overflow-hidden"
-                    aria-label={`Open ${pres.data.title}`}
-                  >
-                    {pres.data.image ? (
-                      <img
-                        src={pres.data.image}
-                        alt={`Preview of ${pres.data.title}`}
-                        class="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div class="flex aspect-video items-center justify-center bg-gradient-to-br from-accent/10 to-cta/10">
-                        <span class="font-serif text-2xl font-bold text-accent/40">
-                          {pres.data.title.charAt(0)}
-                        </span>
-                      </div>
-                    )}
-                  </a>
+    <div class="lg:flex lg:gap-10">
+      <!-- Desktop ToC sidebar -->
+      <aside class="hidden lg:block lg:w-48 lg:shrink-0">
+        <div class="sticky top-28">
+          <TableOfContents entries={tocEntries} variant="sidebar" />
+        </div>
+      </aside>
 
-                  {/* Content */}
-                  <div class="p-5">
-                    <div class="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 class="text-lg font-bold leading-snug text-accent">
-                          {pres.data.title}
-                          {pres.data.status === "in-progress" && (
-                            <span class="ml-2 inline-block rounded bg-education/10 px-2 py-0.5 align-middle text-xs font-medium text-education">
-                              In Progress
-                            </span>
-                          )}
-                        </h3>
-                        <p class="mt-1.5 text-sm text-text-muted">
-                          {pres.data.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="mt-4 flex items-center gap-3">
+      <!-- Main content -->
+      <div class="min-w-0 flex-1">
+        {
+          categoryOrder.map((cat) => {
+            const items = grouped.get(cat);
+            if (!items) return null;
+            return (
+              <section class="mb-16" id={cat} data-toc-section={cat}>
+                <h2 class="reveal mb-8 border-b border-border pb-2 font-serif text-2xl font-bold text-accent">
+                  {categoryLabels[cat]}
+                </h2>
+                <div class="grid gap-6 sm:grid-cols-2">
+                  {items.map((pres) => (
+                    <article
+                      class="reveal group overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md hover:border-accent/20"
+                    >
+                      {/* Preview image */}
                       <a
                         href={pres.data.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
+                        class="block overflow-hidden"
+                        aria-label={`Open ${pres.data.title}`}
                       >
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        View Slides
+                        {pres.data.image ? (
+                          <img
+                            src={pres.data.image}
+                            alt={`Preview of ${pres.data.title}`}
+                            class="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div class="flex aspect-video items-center justify-center bg-gradient-to-br from-accent/10 to-cta/10">
+                            <span class="font-serif text-2xl font-bold text-accent/40">
+                              {pres.data.title.charAt(0)}
+                            </span>
+                          </div>
+                        )}
                       </a>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        );
-      })
-    }
+
+                      {/* Content */}
+                      <div class="p-5">
+                        <h3 class="text-lg font-bold leading-snug text-accent">
+                          {pres.data.title}
+                        </h3>
+                        <p class="mt-1.5 text-sm text-text-muted">
+                          {pres.data.description}
+                        </p>
+
+                        <div class="mt-4 flex items-center gap-3">
+                          <a
+                            href={pres.data.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-cta transition-colors hover:bg-cta/5 hover:text-cta-hover"
+                          >
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            View Slides
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })
+        }
+      </div>
+    </div>
   </div>
 </BaseLayout>
